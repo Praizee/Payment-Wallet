@@ -1,12 +1,12 @@
 /* font import */
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-    font-family: 'Golos Text', sans-serif;
+    font-family: 'Readex Pro', sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
 }
