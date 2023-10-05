@@ -1,12 +1,12 @@
 /* font import */
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-    font-family: 'Readex Pro', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
 }
