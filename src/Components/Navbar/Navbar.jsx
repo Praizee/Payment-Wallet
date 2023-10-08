@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// Unused
 // import { NavbarData } from "./NavbarData"
 import { FiMenu } from "react-icons/fi";
 import { LuBell } from "react-icons/lu";
