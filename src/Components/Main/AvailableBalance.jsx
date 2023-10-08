@@ -45,7 +45,7 @@ const AvailableBalance = () => {
                 </div>
             </div>
 
-        </section >
+        </section>
     );
 };
 
