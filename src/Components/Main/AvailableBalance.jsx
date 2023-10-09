@@ -1,23 +1,22 @@
-import React, { useState } from "react";
-import './styles.css'
+import React from "react";
+import './styles.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import { IoCopyOutline } from "react-icons/io5";
-
+import CopyButton from "./CopyButton";
 
 const AvailableBalance = () => {
-
     return (
         <section className="">
-
             <div className="">
                 <div className="balance w-[20.5rem] px-5 py-6 leading-normal space-y-2 rounded-[1.2rem] text-white">
                     <p className="text-[0.75rem] font-semibold">
                         AVAILABLE BALANCE
                     </p>
                     <span className="flex space-x-3 text-[3.125rem]">
-                        {/* <span className="py-6">
+                        {/* show */}
+                        <span className="py-6">
                             <AiOutlineEye size={30} title="Show" />
-                        </span> */}
+                        </span>
+                        {/* hide */}
                         <span className="py-6">
                             <AiOutlineEyeInvisible size={30} title="Hide" />
                         </span>
@@ -35,9 +34,11 @@ const AvailableBalance = () => {
                         </p>
                     </span>
                     <span className="flex space-x-3 text-[2.1875rem]">
-                        {/* <span className="py-6">
-                            <AiOutlineEye size={30} title="Show" />
-                        </span> */}
+                        {/* show */}
+                        <span className="py-4">
+                            <AiOutlineEye size={25} title="Show" />
+                        </span>
+                        {/* hide */}
                         <span className="py-4">
                             <AiOutlineEyeInvisible size={25} title="Hide" />
                         </span>
@@ -62,6 +63,7 @@ const AvailableBalance = () => {
                     </select>
 
                     <span className="flex justify-between font-normal bg-[#2488FF80] p-2 rounded-lg">
+                        {/* text to be copied */}
                         <span className="flex space-x-4 py-2">
                             <p className="text-[0.75rem] font-semibold">
                                 8452099123
@@ -70,15 +72,13 @@ const AvailableBalance = () => {
                                 — &nbsp; UBA Bank
                             </p>
                         </span>
-                        <span className="bg-[#2488FF80]/50 p-1 rounded-lg transform scale-x-[-1] cursor-pointer">
-                            <IoCopyOutline size={25} />
-                        </span>
-                    </span>
 
+                        {/* Include the CopyButton component here */}
+                        <CopyButton />
+                    </span>
                 </div>
             </div>
-
-        </section >
+        </section>
     );
 };
 
