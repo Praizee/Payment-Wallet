@@ -27,13 +27,13 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-[0.05rem]">
-        <button className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle" title="Scan QR Code">
           <LuScanLine size={23} />
         </button>
-        <button className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle" title="Get Help">
           <IoChatboxEllipsesOutline size={23} />
         </button>
-        <button className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle" title="Notifications">
           <div className="indicator">
             <LuBell size={23} />
             <span className="badge badge-xs badge-primary indicator-item"></span>
