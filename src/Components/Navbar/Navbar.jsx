@@ -38,7 +38,7 @@ const Navbar = () => {
           <button className="btn btn-ghost btn-circle" title="Notifications">
             <div className="indicator">
               <LuBell size={23} />
-              <span className="badge badge-xs badge-primary indicator-item"></span>
+              <span className="badge badge-xs badge-primary py-2 text-[0.625rem] text-white indicator-item">4</span>
             </div>
           </button>
         </div>
