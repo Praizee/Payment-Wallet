@@ -1,6 +1,5 @@
 import React from "react";
 import './styles.css';
-import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import CopyButton from "./CopyButton";
 import Balance from "./Balance";
 
