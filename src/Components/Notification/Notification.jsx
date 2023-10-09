@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const Notification = ({ message, onClose }) => {
     const [visible, setVisible] = useState(true);
@@ -6,7 +7,7 @@ const Notification = ({ message, onClose }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setVisible(false);
-            onClose();
+            onClose(); // Call the onClose function when the notification is closed
         }, 5000);
 
         return () => clearTimeout(timer);
@@ -14,10 +15,16 @@ const Notification = ({ message, onClose }) => {
 
     return (
         <div
-            className={`fixed bottom-0 left-0 right-0 mx-auto p-4 bg-[#2488FF80] text-white rounded-md transition-opacity ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            className={`fixed flex bottom-0 z-[100] left-0 right-0 mx-auto space-x-4 p-4 bg-success text-white rounded-md transition-opacity 
+            ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
         >
-            {message}
+            <span className=''>
+                <BsFillCheckCircleFill size={20} />
+            </span>
+            <p className=' font-semibold'>
+                {message}
+            </p>
         </div>
     );
 };
