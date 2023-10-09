@@ -23,7 +23,7 @@ const Balance = ({ initialBalance }) => {
                     )}
                 </span>
                 {/* Balance */}
-                <h1>
+                <h1 className=" select-none">
                     {isBalanceVisible ? `₦${formattedInitialBalance}` : "₦***,***"}
                 </h1>
             </span>
