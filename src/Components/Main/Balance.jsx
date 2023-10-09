@@ -15,7 +15,7 @@ const Balance = ({ initialBalance }) => {
         <div>
             <span className="flex space-x-3 text-[3.125rem]">
                 {/* Show/Hide icon */}
-                <span className="py-6" onClick={toggleBalanceVisibility}>
+                <span className="py-6 cursor-pointer" onClick={toggleBalanceVisibility}>
                     {isBalanceVisible ? (
                         <AiOutlineEyeInvisible size={30} title="Hide" />
                     ) : (
