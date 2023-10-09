@@ -13,6 +13,7 @@ const CopyButton = ({ selectedBank }) => {
             "UBA Bank PLC": "8452099123",
             "Wema Bank PLC": "1234567890",
             "Zenith Bank PLC": "9876543210",
+            "Sterling Bank Ltd": "9876543310",
         };
 
         // Get the account number based on the selected bank

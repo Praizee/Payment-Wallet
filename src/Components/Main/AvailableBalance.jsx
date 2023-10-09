@@ -11,6 +11,7 @@ const AvailableBalance = () => {
         "UBA Bank PLC": "8452099123",
         "Wema Bank PLC": "1234567890", // Replace with actual account numbers
         "Zenith Bank PLC": "9876543210",
+        "Sterling Bank Ltd": "9876543310",
     };
 
     // Function to handle changes in the selected bank
@@ -54,6 +55,10 @@ const AvailableBalance = () => {
                         <option value={"Zenith Bank PLC"}
                             className="text-[black]">
                             Zenith Bank PLC
+                        </option>
+                        <option value={"Sterling Bank Ltd"}
+                            className="text-[black]">
+                            Sterling Bank Ltd
                         </option>
                     </select>
 
