@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import './styles.css';
 import CopyButton from "./CopyButton";
 import Balance from "./Balance";
 
 const AvailableBalance = () => {
+    const [selectedBank, setSelectedBank] = useState("UBA Bank PLC"); // Set the default bank here
+
+    // Create an object to store bank-account number pairs
+    const bankAccountNumbers = {
+        "UBA Bank PLC": "8452099123",
+        "Wema Bank PLC": "1234567890", // Replace with actual account numbers
+        "Zenith Bank PLC": "9876543210",
+    };
+
+    // Function to handle changes in the selected bank
+    const handleBankChange = (e) => {
+        setSelectedBank(e.target.value);
+    };
+
     return (
         <section className="">
             <div className="">
@@ -25,7 +39,10 @@ const AvailableBalance = () => {
                         <Balance initialBalance={654321} />
                     </div>
                     <select name="bank" id="bank"
-                        className="text-[0.9375rem] w-full leading-normal font-semibold p-2 bg-transparent border border-white rounded-lg">
+                        className="text-[0.9375rem] w-full leading-normal font-semibold p-2 bg-transparent border border-white rounded-lg"
+                        onChange={handleBankChange} // Add this onChange handler
+                        value={selectedBank} // Set the selected value to the state
+                    >
                         <option value={"UBA Bank PLC"}
                             className="text-[black]">
                             UBA Bank PLC
@@ -44,15 +61,15 @@ const AvailableBalance = () => {
                         {/* text to be copied */}
                         <span className="flex space-x-4 py-2">
                             <p className="text-[0.75rem] font-semibold">
-                                8452099123
+                                {bankAccountNumbers[selectedBank]}
                             </p>
                             <p className="text-[0.75rem]">
-                                — &nbsp; UBA Bank
+                                — &nbsp; {selectedBank}
                             </p>
                         </span>
 
                         {/* Include the CopyButton component here */}
-                        <CopyButton />
+                        <CopyButton selectedBank={selectedBank} />
                     </span>
                 </div>
             </div>

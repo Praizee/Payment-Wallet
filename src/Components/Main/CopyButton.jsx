@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import Notification from "../Notification/Notification";
 
-const CopyButton = () => {
+const CopyButton = ({ selectedBank }) => {
     const [showNotification, setShowNotification] = useState(false);
 
     const handleCopyClick = (e) => {
         e.preventDefault(); // Prevent the default behavior
-        const textToCopy = '8452099123 — UBA Bank'; // Replace with the text you want to copy
+
+        // Define bankAccountNumbers object here with account numbers for each bank
+        const bankAccountNumbers = {
+            "UBA Bank PLC": "8452099123",
+            "Wema Bank PLC": "1234567890",
+            "Zenith Bank PLC": "9876543210",
+        };
+
+        // Get the account number based on the selected bank
+        const accountNumber = bankAccountNumbers[selectedBank];
+
+        const textToCopy = `${accountNumber} — ${selectedBank}`;
 
         const textArea = document.createElement('textarea');
         textArea.value = textToCopy;
