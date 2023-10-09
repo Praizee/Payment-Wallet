@@ -2,6 +2,7 @@ import React from "react";
 import './styles.css';
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import CopyButton from "./CopyButton";
+import Balance from "./Balance";
 
 const AvailableBalance = () => {
     return (
@@ -11,41 +12,19 @@ const AvailableBalance = () => {
                     <p className="text-[0.75rem] font-semibold">
                         AVAILABLE BALANCE
                     </p>
-                    <span className="flex space-x-3 text-[3.125rem]">
-                        {/* show */}
-                        <span className="py-6">
-                            <AiOutlineEye size={30} title="Show" />
+                    <div>
+                        <Balance initialBalance={123456} />
+                        <span>
+                            <p className="text-[0.75rem] font-medium">
+                                *This balance is available to withdraw
+                            </p>
+                            <hr className="my-4 " />
+                            <p className="text-[0.75rem] font-semibold">
+                                LEDGER BALANCE
+                            </p>
                         </span>
-                        {/* hide */}
-                        <span className="py-6">
-                            <AiOutlineEyeInvisible size={30} title="Hide" />
-                        </span>
-                        <h1>
-                            ₦#,###
-                        </h1>
-                    </span>
-                    <span>
-                        <p className="text-[0.75rem] font-medium">
-                            *This balance is available to withdraw
-                        </p>
-                        <hr className="my-4 " />
-                        <p className="text-[0.75rem] font-semibold">
-                            LEDGER BALANCE
-                        </p>
-                    </span>
-                    <span className="flex space-x-3 text-[2.1875rem]">
-                        {/* show */}
-                        <span className="py-4">
-                            <AiOutlineEye size={25} title="Show" />
-                        </span>
-                        {/* hide */}
-                        <span className="py-4">
-                            <AiOutlineEyeInvisible size={25} title="Hide" />
-                        </span>
-                        <h1>
-                            ₦#,###
-                        </h1>
-                    </span>
+                        <Balance initialBalance={654321} />
+                    </div>
                     <select name="bank" id="bank"
                         className="text-[0.9375rem] w-full leading-normal font-semibold p-2 bg-transparent border border-white rounded-lg">
                         <option value={"UBA Bank PLC"}
