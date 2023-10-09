@@ -59,7 +59,7 @@ const CopyButton = ({ selectedBank }) => {
             {/* 'copy' icon */}
             <span
                 className="bg-[#2488FF80]/50 p-1 rounded-lg transform scale-x-[-1] cursor-pointer"
-                onClick={handleCopyClick}
+                onClick={handleCopyClick} title="Copy"
             >
                 <IoCopyOutline size={25} />
             </span>
