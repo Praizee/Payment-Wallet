@@ -6,7 +6,7 @@ const HeaderGraph = () => {
         <section className="">
             <div className="">
 
-                <div className="p-4 w-[43.3125rem] h-[24.4375rem] text-black bg-white rounded-lg">
+                <div className="p-4 min-w-[43.3125rem] h-[24.4375rem] text-black bg-white rounded-lg">
                     <span className="flex justify-between">
                         <span>
                             <p className="text-[0.75rem] text-[#2E2E3A] leading-normal font-bold">
