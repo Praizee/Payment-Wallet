@@ -36,7 +36,7 @@ const Dashboard = () => {
                 Overview
               </h1>
 
-              <div className="flex gap-5 my-4">
+              <div className="laptop:flex gap-5 my-4">
                 <HeaderGraph />
                 <AvailableBalance />
               </div>
