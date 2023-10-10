@@ -26,7 +26,7 @@ export const CustomerTable = () => {
             <a
                 key={i}
                 onClick={() => handlePageChange(i)}
-                className={`px-3 py-1 rounded-lg cursor-pointer text-white border ${currentPage === i ?
+                className={`px-3 py-2 rounded-lg cursor-pointer text-white ${currentPage === i ?
                     'bg-blue-400' :
                     'bg-white'}`}
             >
@@ -112,7 +112,7 @@ export const CustomerTable = () => {
                             >
                                 Prev
                             </a>
-                            <p className='py-1'>
+                            <p className='py-2'>
                                 {paginationButtons}
                             </p>
                             <a
