@@ -4,6 +4,7 @@ import AvailableBalance from "../Components/Main/AvailableBalance";
 import HeaderGraph from "../Components/Main/HeaderGraph";
 import Statistics from "../Components/Main/Statistics";
 import { SidebarWithSearch } from "../Components/SideBarMenu/SideBarMenu";
+import { CustomerTable } from "../Components/Main/CustomerTable";
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -23,26 +24,30 @@ const Dashboard = () => {
         transition={{ duration: 3 }}
       >
 
-        <div className="containe pt-24 pb-16 laptop:mr-[8rem]">
+        <div className="container pt-24 pb-16 laptop:mr-[8rem]">
 
-          <div className="flex gap-2 justify-between relative">
+          <div className="flex gap-4 justify-betwee relative">
 
             <div className="">
               <SidebarWithSearch />
             </div>
 
-            <div className="relative">
+            <div className="relative space-y-4">
               <h1 className="text-[2.5rem] text-[#2E2E3A] leading-normal font-bold">
                 Overview
               </h1>
 
-              <div className="laptop:flex gap-5 my-4">
+              <div className="laptop:flex gap-4 justify-between">
                 <HeaderGraph />
                 <AvailableBalance />
               </div>
 
               <div className="">
                 <Statistics />
+              </div>
+
+              <div className="">
+                <CustomerTable />
               </div>
             </div>
 
