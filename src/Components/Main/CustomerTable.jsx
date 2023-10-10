@@ -1,19 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FcPrint } from "react-icons/fc";
-import Cheque from "../../assets/cheque.png"
-import VisaRed from "../../assets/visa-red.png"
-import VisaBlue from "../../assets/visa-blue.png"
-import MasterCard from "../../assets/mastercard.png"
-import Wise from "../../assets/wise.png"
+import { CustomerTableData } from './content';
 
 
 export const CustomerTable = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5; // Number of items to display per page
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    const displayedData = CustomerTableData.slice(startIndex, endIndex);
+
+    const totalPages = Math.ceil(CustomerTableData.length / itemsPerPage);
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= totalPages) {
+            setCurrentPage(newPage);
+        }
+    };
+
+    const paginationButtons = [];
+    for (let i = 1; i <= totalPages; i++) {
+        paginationButtons.push(
+            <a
+                key={i}
+                onClick={() => handlePageChange(i)}
+                className={`px-3 py-1 rounded-lg cursor-pointer text-white border ${currentPage === i ?
+                    'bg-blue-400' :
+                    'bg-white'}`}
+            >
+                {i}
+            </a>
+        );
+    }
+
     return (
         <section>
             <div>
-
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table className="w-full table-auto text-sm text-left text-gray-500 dark:text-gray-400">
+                        {/* Table header */}
+                        {/* ... (your table header) */}
                         <thead className="text-xs text-gray-700 bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" className="px-6 py-3 text-[0.825rem]">
@@ -39,164 +67,63 @@ export const CustomerTable = () => {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 text-[0.8375rem] py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Jenkins International Ltd.
-                                </th>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    029830192
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    <img src={Cheque} className='' alt='cheque' />
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    - ₦1,350
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    27/11/2022  4:13:00 PM
-                                </td>
-                                <td className="px-5 py-4 ">
-                                    <p className='text-[0.8375rem] p-1 rounded-md text-[#FFCF5C] bg-[#FFCF5C]/10'>
-                                        Pending
-                                    </p>
-                                </td>
-                                <td className="px-4 py-4 text-[0.8375rem]">
-                                    <FcPrint className="h-6 w-6 cursor-pointer" title='Print' />
-                                </td>
-                            </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 text-[0.8375rem] py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Travail Clubs International
-                                </th>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    924568334
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    <img src={VisaRed} className='' alt='visa-red' />
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    + ₦18,125
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    23/10/2022  3:45:59 PM
-                                </td>
-                                <td className="px-5 py-4 ">
-                                    <p className='text-[0.8375rem] p-1 rounded-md text-[#1CA78B] bg-[#F0F4F9]'>
-                                        Approved
-                                    </p>
-                                </td>
-                                <td className="px-4 py-4 text-[0.8375rem]">
-                                    <FcPrint className="h-6 w-6 cursor-pointer" title='Print' />
-                                </td>
-                            </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 text-[0.8375rem] py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Google LLC
-                                </th>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    394012490
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    <img src={VisaBlue} className='' alt='visa-blue' />
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    - ₦1,350
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    27/9/2022  7:27:39 AM
-                                </td>
-                                <td className="px-5 py-4 ">
-                                    <p className='text-[0.8375rem] p-1 rounded-md text-[#1CA78B] bg-[#F0F4F9]'>
-                                        Approved
-                                    </p>
-                                </td>
-                                <td className="px-4 py-4 text-[0.8375rem]">
-                                    <FcPrint className="h-6 w-6 cursor-pointer" title='Print' />
-                                </td>
-                            </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 text-[0.8375rem] py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Meta Corps
-                                </th>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    782019231
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    <img src={MasterCard} className='' alt='mastercard' />
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    + ₦6,180
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    30/8/2022  11:01:53 PM
-                                </td>
-                                <td className="px-5 py-4 ">
-                                    <p className='text-[0.8375rem] p-1 rounded-md text-[#1CA78B] bg-[#F0F4F9]'>
-                                        Approved
-                                    </p>
-                                </td>
-                                <td className="px-4 py-4 text-[0.8375rem]">
-                                    <FcPrint className="h-6 w-6 cursor-pointer" title='Print' />
-                                </td>
-                            </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 text-[0.8375rem] py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Brumpost Media LLC
-                                </th>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    112901928
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    <img src={Wise} className='' alt='Wise' />
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    + ₦39,000
-                                </td>
-                                <td className="px-6 py-4 text-[0.8375rem]">
-                                    28/7/2022  1:00:32 PM
-                                </td>
-                                <td className="px-5 py-4 ">
-                                    <p className='text-[0.8375rem] p-1 rounded-md text-[#1CA78B] bg-[#F0F4F9]'>
-                                        Approved
-                                    </p>
-                                </td>
-                                <td className="px-4 py-4 text-[0.8375rem]">
-                                    <FcPrint className="h-6 w-6 cursor-pointer" title='Print' />
-                                </td>
-                            </tr>
-                        </tbody>
+
+                        {/* Table body */}
+                        {displayedData.map((item, index) => (
+                            <tbody key={index}>
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <th scope="row" className="px-6 text-[0.8375rem] py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {item.customer}
+                                    </th>
+                                    <td className="px-6 py-4 text-[0.8375rem]">
+                                        {item.transactionID}
+                                    </td>
+                                    <td className="px-6 py-4 text-[0.8375rem]">
+                                        <img src={item.channel} className='' alt='cheque' />
+                                    </td>
+                                    <td className="px-6 py-4 text-[0.8375rem]">
+                                        {item.amount}
+                                    </td>
+                                    <td className="px-6 py-4 text-[0.8375rem]">
+                                        {item.date}
+                                    </td>
+                                    <td className="px-5 py-4 ">
+                                        <p className={item.status === 'Approved' ? 'text-[0.8375rem] p-1 rounded-md text-[#1CA78B] bg-[#F0F4F9]' : 'text-[0.8375rem] p-1 rounded-md text-[#FFCF5C] bg-[#FFCF5C]/10'}>
+                                            {item.status}
+                                        </p>
+                                    </td>
+                                    <td className="px-4 py-4 text-[0.8375rem]">
+                                        <FcPrint className="h-6 w-6 cursor-pointer" title='Print' />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        ))}
                     </table>
 
-                    {/* table pagination */}
+                    {/* Pagination */}
                     <nav className="flex items-center justify-between py-4" aria-label="Table navigation">
-                        <span className="text-sm font-normal px-6 text-gray-500 dark:text-gray-400">Showing <span className="font-semibold text-gray-900 dark:text-white">1-5</span> of <span className="font-semibold text-gray-900 dark:text-white">500</span></span>
-                        <ul className="inline-flex -space-x-px px-4 text-sm h-8">
-                            <li>
-                                <a href="#" className="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                            </li>
-                            <li>
-                                <a href="#" aria-current="page" className="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                            </li>
-                        </ul>
+                        <span className="text-sm font-normal px-6 text-gray-500 dark:text-gray-400">
+                            Showing <span className="font-semibold text-gray-900 dark:text-white">{startIndex + 1}-{endIndex}</span> of <span className="font-semibold text-gray-900 dark:text-white">{CustomerTableData.length}</span>
+                        </span>
+                        <div className="inline-flex space-x-2 px-4 text-sm h-8">
+                            <a
+                                onClick={() => handlePageChange(currentPage - 1)}
+                                className={`flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
+                            >
+                                Prev
+                            </a>
+                            <p className='py-1'>
+                                {paginationButtons}
+                            </p>
+                            <a
+                                onClick={() => handlePageChange(currentPage + 1)}
+                                className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === totalPages ? 'cursor-not-allowed' : 'hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
+                            >
+                                Next
+                            </a>
+                        </div>
                     </nav>
                 </div>
-
             </div>
         </section>
     )
