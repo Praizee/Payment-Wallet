@@ -18,6 +18,7 @@ import { VscGraphLine } from "react-icons/vsc";
 import { LuLogOut } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RxAvatar } from "react-icons/rx";
+import { GoMegaphone } from "react-icons/go";
 
 
 export function SidebarWithSearch() {
@@ -113,13 +114,14 @@ export function SidebarWithSearch() {
             </List>
 
             <Alert open={openAlert} className="mt-8 bg-blue-gray-900" onClose={() => setOpenAlert(false)}>
-                <CubeTransparentIcon className="mb-4 h-12 w-12" />
+                <GoMegaphone className="mb-4 h-12 w-12" />
                 <Typography variant="h6" className="mb-1">
-                    Upgrade to PRO
+                    Announcement
                 </Typography>
                 <Typography variant="small" className="font-normal opacity-80">
-                    Upgrade to PRO and get even more perks, plugins, advanced features
-                    and premium.
+                    You can now make payments for Phone Airtime Recharge and Internet Data bundle
+                    subscription (MTN, Airtel, 9Mobile, Glo); Cable TV subscription
+                    such as DTSV, GOTV, Startimes; as well as Electricity bills.
                 </Typography>
                 <div className="mt-4 flex gap-3">
                     <Typography
@@ -132,7 +134,7 @@ export function SidebarWithSearch() {
                         Dismiss
                     </Typography>
                     <Typography as="a" href="#" variant="small" className="font-medium text-success">
-                        Upgrade Now
+                        Try Now
                     </Typography>
                 </div>
             </Alert>
