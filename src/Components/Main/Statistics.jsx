@@ -6,7 +6,7 @@ const Statistics = () => {
         <section className="text-black">
             <div className="">
 
-                <div className="relative grid laptop:grid-cols-3 tablet:grid-cols-2 grid-cols-1 gap-4">
+                <div className="relative grid tablet:w-auto w-max laptop:grid-cols-3 tablet:grid-cols-2 grid-cols-1 gap-4">
 
                     <div className="border bg-white p-4 rounded-lg space-y-1 relative">
                         <p className="text-[0.625rem] font-medium">

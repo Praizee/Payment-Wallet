@@ -30,7 +30,7 @@ export function SidebarWithSearch() {
 
     return (
         // <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
-        <Card className="h-full w-full max-w-[20rem] left-0 bg-transparent p-4 shadow-xl shadow-blue-gray-900/5">
+        <Card className="h-full hidden tablet:block w-full max-w-[20rem] left-0 bg-transparent p-4 shadow-[0_10px_20px_]">
             <div className="p-2">
                 <Input icon={<MagnifyingGlassIcon className="h-5 w-5" />} label="Search" />
             </div>

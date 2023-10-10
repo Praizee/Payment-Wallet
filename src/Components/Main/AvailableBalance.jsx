@@ -22,7 +22,7 @@ const AvailableBalance = () => {
     return (
         <section className="">
             <div className="">
-                <div className="balance w-[20.5rem] h-[24.4375rem] px-5 py-6 leading-normal space-y-2 rounded-[1.2rem] text-white">
+                <div className="balance max-w-[18.5rem] tablet:max-w-[20.5rem] h-[24.4375rem] px-5 py-6 leading-normal space-y-2 rounded-[1.2rem] text-white">
                     <p className="text-[0.75rem] font-semibold">
                         AVAILABLE BALANCE
                     </p>

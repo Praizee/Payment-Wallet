@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Graph from "../../assets/Graph.png"
 
 const HeaderGraph = () => {
 
@@ -6,7 +7,8 @@ const HeaderGraph = () => {
         <section className="">
             <div className="">
                 {/* min-w-[43.3125rem]  */}
-                <div className="p-4 min-w-[28.3125rem] laptop:min-w-[39rem]  h-[24.4375rem] text-black bg-white rounded-lg">
+                {/* min-w-[28.3125rem] laptop:min-w-[39rem] */}
+                <div className="p-4 tablet:max-w-[38.3125rem] w-auto  h-[24.4375rem] text-black bg-white rounded-lg">
                     <span className="flex justify-between">
                         <span>
                             <p className="text-[0.75rem] text-[#2E2E3A] leading-normal font-bold">
@@ -28,6 +30,64 @@ const HeaderGraph = () => {
                             </p>
                         </span>
                     </span>
+
+                    <div className="flex gap-6 justify-betwee mt-10">
+                        <span className="space-y-8">
+                            <p className="text-[0.6875rem] font-semibold">
+                                ₦700K
+                            </p>
+                            <p className="text-[0.6875rem] font-semibold">
+                                ₦500K
+                            </p>
+                            <p className="text-[0.6875rem] font-semibold">
+                                ₦300K
+                            </p>
+                            <p className="text-[0.6875rem] font-semibold">
+                                ₦100K
+                            </p>
+                            <p className="text-[0.6875rem] font-semibold">
+                                ₦50K
+                            </p>
+                        </span>
+                        <span className="flex items-end">
+                            <img src={Graph} className="" alt="graph" />
+                        </span>
+                    </div>
+                    <div className="mt-4 flex justify-between">
+                        <span className="text-[0.6875rem] font-semibold">
+                            0:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            01:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            02:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            03:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            04:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            05:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            06:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            07:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            08:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            09:00
+                        </span>
+                        <span className="text-[0.6875rem] font-semibold">
+                            10:00
+                        </span>
+                    </div>
                 </div>
 
 
