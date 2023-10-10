@@ -20,7 +20,7 @@ const HeaderGraph = () => {
     return (
         <section className="">
             <div className="">
-                <div className="p-4 tablet:max-w-[38.3125rem] w-auto h-[24.4375rem] text-black bg-white rounded-lg">
+                <div className="p-4 hidden tablet:block tablet:max-w-[38.3125rem] w-auto h-[24.4375rem] text-black bg-white rounded-lg">
                     <span className="flex justify-between">
                         <span>
                             {/* so far */}
