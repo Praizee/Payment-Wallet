@@ -9,16 +9,19 @@ import UserPic from "../../assets/Userpic.png"
 
 
 const Navbar = () => {
-  const [showNav, setshowNav] = useState(false)
+  const [showSideNav, setshowSideNav] = useState(false)
 
   return (
     <div className="navbar bg-white border-none fixed py-4 top-0 z-[100]">
+
       <div className="flex-1 laptop:mx-[rem] mx-">
+        {/* menu icon to show/hide side-menu */}
         <div className="flex-none ">
           <button className="btn btn-square btn-ghost">
             <FiMenu size={25} />
           </button>
         </div>
+        {/* end of menu icon */}
 
         <div className="flex-1 mx-4">
           <a className="leading-[1.5rem] text-black font-black text-[1.5rem]">
@@ -44,7 +47,7 @@ const Navbar = () => {
         </div>
 
         <div className="">
-          <span className="flex mx-4 gap-2 justify-between">
+          <span className="hidden tablet:flex mx-4 gap-2 justify-between">
             <span className="py-1">
               <img src={UserPic} alt="User-pic" className="rounded-full" />
             </span>
@@ -59,6 +62,7 @@ const Navbar = () => {
             </span>
           </span>
         </div>
+
       </div>
 
     </div>
