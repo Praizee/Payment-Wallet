@@ -1,40 +1,80 @@
 import React, { useState } from "react";
-import Graph from "../../assets/Graph.png"
+import DailyGraph from "../../assets/Graph.png";
+import WeeklyGraph from "../../assets/Graph-2.png";
+import MonthlyGraph from "../../assets/Graph-3.png";
 
 const HeaderGraph = () => {
+    const [selectedInterval, setSelectedInterval] = useState("Daily");
+
+    // Define the mapping of interval names to graph images and balances
+    const intervalToDataMap = {
+        Daily: { graph: DailyGraph, balance: "₦629,394", day: "Today so far", },
+        Weekly: { graph: WeeklyGraph, balance: "₦1,234,567", day: "This week so far", },
+        Monthly: { graph: MonthlyGraph, balance: "₦5,678,901", day: "This month so far", },
+    };
+
+    const handleIntervalChange = (interval) => {
+        setSelectedInterval(interval);
+    };
 
     return (
         <section className="">
             <div className="">
-                {/* min-w-[43.3125rem]  */}
-                {/* min-w-[28.3125rem] laptop:min-w-[39rem] */}
-                <div className="p-4 tablet:max-w-[38.3125rem] w-auto  h-[24.4375rem] text-black bg-white rounded-lg">
+                <div className="p-4 tablet:max-w-[38.3125rem] w-auto h-[24.4375rem] text-black bg-white rounded-lg">
                     <span className="flex justify-between">
                         <span>
+                            {/* so far */}
                             <p className="text-[0.75rem] text-[#2E2E3A] leading-normal font-bold">
-                                Today so far
+                                {intervalToDataMap[selectedInterval].day}
                             </p>
+                            {/* end of 'so far' */}
+
+                            {/* Display the selected balance based on the state */}
                             <h1 className="text-[1.25rem] text-[#2E2E3A] leading-normal font-black">
-                                ₦629,394
+                                {intervalToDataMap[selectedInterval].balance}
                             </h1>
+                            {/* Display the selected balance based on the state */}
                         </span>
                         <span className="space-x-4 rounded-xl bg-[#ECECEC]">
-                            <p className="btn rounded-xl normal-case px-4 text-white bg-[#0071F2]/80 hover:bg-[#0071F2]">
+                            <p
+                                onClick={() => handleIntervalChange("Daily")}
+                                className={`btn rounded-xl normal-case px-4 ${selectedInterval === "Daily"
+                                    ? "text-white bg-[#0071F2]/80 hover:bg-[#0071F2]"
+                                    : "text-black"
+                                    }`}
+                            >
                                 Daily
                             </p>
-                            <p className="btn rounded-xl normal-case px-4 text-black ">
+                            <p
+                                onClick={() => handleIntervalChange("Weekly")}
+                                className={`btn rounded-xl normal-case px-4 ${selectedInterval === "Weekly"
+                                    ? "text-white bg-[#0071F2]/80 hover:bg-[#0071F2]"
+                                    : "text-black"
+                                    }`}
+                            >
                                 Weekly
                             </p>
-                            <p className="btn rounded-xl normal-case px-4 text-black ">
+                            <p
+                                onClick={() => handleIntervalChange("Monthly")}
+                                className={`btn rounded-xl normal-case px-4 ${selectedInterval === "Monthly"
+                                    ? "text-white bg-[#0071F2]/80 hover:bg-[#0071F2]"
+                                    : "text-black"
+                                    }`}
+                            >
                                 Monthly
                             </p>
                         </span>
                     </span>
-
                     <div className="flex gap-6 justify-betwee mt-10">
-                        <span className="space-y-8">
+                        <span className="space-y-6">
                             <p className="text-[0.6875rem] font-semibold">
-                                ₦700K
+                                ₦5M
+                            </p>
+                            <p className="text-[0.6875rem] font-semibold">
+                                ₦3M
+                            </p>
+                            <p className="text-[0.6875rem] font-semibold">
+                                ₦1M
                             </p>
                             <p className="text-[0.6875rem] font-semibold">
                                 ₦500K
@@ -45,13 +85,16 @@ const HeaderGraph = () => {
                             <p className="text-[0.6875rem] font-semibold">
                                 ₦100K
                             </p>
-                            <p className="text-[0.6875rem] font-semibold">
-                                ₦50K
-                            </p>
                         </span>
+                        {/* Display the selected graph based on the state */}
                         <span className="flex items-end">
-                            <img src={Graph} className="" alt="graph" />
+                            <img
+                                src={intervalToDataMap[selectedInterval].graph}
+                                className=""
+                                alt="graph"
+                            />
                         </span>
+                        {/* end of graph */}
                     </div>
                     <div className="mt-4 flex justify-between">
                         <span className="text-[0.6875rem] font-semibold">
@@ -89,8 +132,6 @@ const HeaderGraph = () => {
                         </span>
                     </div>
                 </div>
-
-
             </div>
         </section>
     );
