@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DailyGraph from "../../assets/Graph.png";
-import WeeklyGraph from "../../assets/Graph-2.png";
-import MonthlyGraph from "../../assets/Graph-3.png";
+import WeeklyGraph from "../../assets/Graph-3.png";
+import MonthlyGraph from "../../assets/Graph-2.png";
 
 const HeaderGraph = () => {
     const [selectedInterval, setSelectedInterval] = useState("Daily");
