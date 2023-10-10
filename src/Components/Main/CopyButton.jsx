@@ -10,10 +10,10 @@ const CopyButton = ({ selectedBank }) => {
 
         // Define bankAccountNumbers object here with account numbers for each bank
         const bankAccountNumbers = {
+            "Sterling Bank Ltd": "9876543310",
             "UBA Bank PLC": "8452099123",
             "Wema Bank PLC": "1234567890",
             "Zenith Bank PLC": "9876543210",
-            "Sterling Bank Ltd": "9876543310",
         };
 
         // Get the account number based on the selected bank
