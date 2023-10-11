@@ -5,6 +5,7 @@ import HeaderGraph from "../Components/Main/HeaderGraph";
 import Statistics from "../Components/Main/Statistics";
 import { SidebarWithSearch } from "../Components/SideBarMenu/SideBarMenu";
 import { CustomerTable } from "../Components/Main/CustomerTable";
+import Navbar from "../Components/Navbar/Navbar";
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -23,7 +24,9 @@ const Dashboard = () => {
         exit="exit"
         transition={{ duration: 3 }}
       >
-
+        <div>
+          <Navbar />
+        </div>
         <div className="container pt-24 pb-16 laptop:mr-[rem]">
 
           <div className="flex gap-4 justify-betwee relative">
