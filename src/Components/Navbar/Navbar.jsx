@@ -2,9 +2,8 @@ import React, { useState } from "react";
 // Unused
 // import { NavbarData } from "./NavbarData"
 import { FiMenu } from "react-icons/fi";
-import { LuBell } from "react-icons/lu";
-import { IoChatboxEllipsesOutline } from "react-icons/io5";
-import { LuScanLine } from "react-icons/lu";
+import { LuBell, LuScanLine, LuSun, LuMoon } from "react-icons/lu";
+import { IoChatboxEllipsesOutline, IoMoonOutline } from "react-icons/io5";
 import UserPic from "../../assets/Userpic.png"
 import Star from "../../../public/Star.svg"
 
@@ -45,6 +44,12 @@ const Navbar = () => {
               <LuBell size={23} />
               <span className="badge badge-xs badge-primary py-2 text-[0.625rem] text-white indicator-item">4</span>
             </div>
+          </button>
+          {/* <button className="btn btn-ghost btn-circle" title="Get Help">
+            <LuSun size={23} />
+          </button> */}
+          <button className="btn btn-ghost btn-circle" title="Get Help">
+            <LuMoon size={23} />
           </button>
         </div>
 
