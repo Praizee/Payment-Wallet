@@ -24,7 +24,7 @@ const Dashboard = () => {
         transition={{ duration: 3 }}
       >
 
-        <div className="container pt-24 pb-16 laptop:mr-[8rem]">
+        <div className="container pt-24 pb-16 laptop:mr-[rem]">
 
           <div className="flex gap-4 justify-betwee relative">
 
