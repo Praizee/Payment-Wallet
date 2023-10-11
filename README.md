@@ -1,4 +1,6 @@
-# React + Vite
+# Digital Payment Wallet
+
+<img src="https://www.vesta.io/hubfs/digital-wallet-protection.png" alt="Digital Wallet"/>
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
