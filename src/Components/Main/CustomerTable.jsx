@@ -38,10 +38,9 @@ export const CustomerTable = () => {
     return (
         <section>
             <div>
-                <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <div className="overflow-x-auto shadow-md sm:rounded-lg">
                     <table className="w-full table-auto text-sm text-left text-gray-500 dark:text-gray-400">
                         {/* Table header */}
-                        {/* ... (your table header) */}
                         <thead className="text-xs text-gray-700 bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" className="px-6 py-3 text-[0.825rem]">
@@ -67,6 +66,7 @@ export const CustomerTable = () => {
                                 </th>
                             </tr>
                         </thead>
+                        {/* end of Table header) */}
 
                         {/* Table body */}
                         {displayedData.map((item, index) => (
