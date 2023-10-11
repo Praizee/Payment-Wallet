@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from "./Pages/Layout";
-import HomePage from "./Pages/Dashboard";
 import Contact from "./Pages/Contact";
-import LoginPage from "./Pages/Login";
-import SignUpPage from "./Pages/SignUp";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 import NotFoundPage from "./Pages/404 Page/NotFoundPage";
+import Dashboard from "./Pages/Dashboard";
 
 export default function App() {
 
@@ -13,10 +13,10 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<Dashboard />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="signup" element={<SignUpPage />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
           {/* This is the catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
