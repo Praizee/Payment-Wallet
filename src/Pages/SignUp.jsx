@@ -29,17 +29,17 @@ const SignUp = () => {
                 alt="Night"
                 // src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                 src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
-                className="absolute sm:hidden tablet:block inset-0 h-full w-full object-cover opacity-80"
+                className="absolute sm:hidden tablet:block inset-0 h-full w-full object-cover opacity-40"
               />
               <img
                 alt="Night"
                 src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                 // src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
-                className="absolute laptop:hidden block inset-0 h-full w-full object-cover opacity-80"
+                className="absolute laptop:hidden block inset-0 h-full w-full object-cover opacity-70"
               />
 
-              <div className="hidden lg:relative bg-white/10 rounded-lg p-2 lg:block lg:p-12">
-                <a className="block w-min text-gray-100" href="/">
+              <div className="hidden lg:relative rounded-lg p-2 lg:block lg:p-12">
+                <a className="block w-min text-gray-200" href="/">
                   <span className="sr-only">Home</span>
                   <svg
                     className="h-8 sm:h-10"
@@ -54,7 +54,7 @@ const SignUp = () => {
                   </svg>
                 </a>
 
-                <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+                <h2 className="mt-6 text-2xl font-bold text-gray-200 sm:text-3xl md:text-4xl">
                   Get Started
                 </h2>
 
@@ -179,16 +179,16 @@ const SignUp = () => {
 
                   <div className="col-span-6 sm:col-span-3">
                     <label
-                      htmlFor="PasswordConfirmation"
+                      htmlFor="confirm-password"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Password Confirmation
+                      Confirm Password
                     </label>
 
                     <input
                       type="password"
-                      id="PasswordConfirmation"
-                      name="password_confirmation"
+                      id="confirm-password"
+                      name="confirm-password"
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>

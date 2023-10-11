@@ -30,10 +30,10 @@ const Login = () => {
                 alt="Night"
                 src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                 // src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
-                className="absolute inset-0 h-full w-full object-cover opacity-80"
+                className="absolute inset-0 h-full w-full object-cover opacity-50"
               />
 
-              <div className="hidden lg:relative bg-white/10 rounded-lg p-2 lg:block lg:p-12">
+              <div className="hidden lg:relative rounded-lg p-2 lg:block lg:p-12">
                 <a className="block w-min text-gray-100" href="/">
                   <span className="sr-only">Home</span>
                   <svg
@@ -138,7 +138,11 @@ const Login = () => {
                         Remember Me
                       </span>
                     </label>
-                    <a className="mt-0 text-sm text-[#0071F2] font-semibold link link-hover">Forgot password?</a>
+                    <Link to="/reset-password"
+                      className="mt-0 text-sm text-[#0071F2] font-semibold link link-hover">
+                      Forgot password?
+                    </Link>
+
                   </div>
 
                   <div className="col-span-6 sm:gap-4">
