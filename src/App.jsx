@@ -6,6 +6,7 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import NotFoundPage from "./Pages/404 Page/NotFoundPage";
 import Dashboard from "./Pages/Dashboard";
+import ResetPassword from "./Pages/ResetPassword";
 
 export default function App() {
 
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="reset-password" element={<ResetPassword />} />
           {/* This is the catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
