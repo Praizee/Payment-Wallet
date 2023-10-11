@@ -207,9 +207,9 @@ const SignUp = () => {
                     <p className="text-[0.725rem] text-gray-500">
                       By creating an account, you agree to our &nbsp;
                       <a className="text-gray-700 link link-hover ">
-                        terms and conditions &nbsp;
+                        terms and conditions
                       </a>
-                      and &nbsp;
+                      &nbsp; and &nbsp;
                       <a className="text-gray-700 link link-hover">privacy policy</a>.
                     </p>
                   </div>
