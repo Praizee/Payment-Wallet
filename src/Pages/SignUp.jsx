@@ -29,13 +29,7 @@ const SignUp = () => {
                 alt="Night"
                 // src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                 src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
-                className="absolute sm:hidden tablet:block inset-0 h-full w-full object-cover opacity-40"
-              />
-              <img
-                alt="Night"
-                src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                // src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
-                className="absolute laptop:hidden block inset-0 h-full w-full object-cover opacity-70"
+                className="absolute  inset-0 h-full w-full object-cover opacity-40"
               />
 
               <div className="hidden lg:relative rounded-lg p-2 lg:block lg:p-12">
@@ -101,7 +95,7 @@ const SignUp = () => {
                 </div>
 
                 {/* border-2 border-dotted border-[#0071F2] px-8 py-2 */}
-                <form action="#" className=" mt-8 rounded-lg grid grid-cols-6 gap-6">
+                <form action="#" className=" mt-8 md:mt-0 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10 md:p-5">
 
                   <div className="col-span-6 sm:col-span-3">
                     <label
@@ -229,7 +223,7 @@ const SignUp = () => {
 
                     <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                       Already have an account? &nbsp;
-                      <Link to="/login"
+                      <Link to="/"
                         className="text-gray-700 link link-hover">
                         Log in
                       </Link>.

@@ -93,14 +93,13 @@ const ResetPassword = () => {
                                 </div>
 
                                 <div className=" text-right my-12 md:mb-20">
-                                    <Link to="/login"
+                                    <Link to="/"
                                         className="text-black font-semibold link link-hover">
                                         Go Back
                                     </Link>
                                 </div>
 
-                                {/* border-2 border-dotted border-[#0071F2] px-8 py-2 */}
-                                <form action="#" className=" mt-8 rounded-lg grid grid-cols-6 gap-6">
+                                <form action="#" className=" mt-8 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10">
 
                                     <div className="col-span-6 ">
                                         <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
