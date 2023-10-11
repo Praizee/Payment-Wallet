@@ -5,38 +5,20 @@ import "./styles.css"
 const NotFoundPage = () => {
     return (
         <div className='w-full'>
-            {/* <h1 className=" text-4xl">
-                404 Page NotFound
-            </h1>
-            <p>
-                Sorry, the page you are looking for does not exist.
-            </p> */}
+            <div className="grid h-screen px-4 bg-white place-content-center">
+                <div className="text-center">
+                    <h1 className="font-black text-gray-200 text-9xl">404</h1>
 
-            <section className="page_404 min-h-screen bg-[#f8f8fd] ">
-                <div className="container laptop:mx-[6rem] tablet:mx-[3rem]">
-                    <div className="row">
-                        <div className="col-sm-12 ">
-                            <div className="col-sm-10 col-sm-offset-1  text-center">
-                                <div className="four_zero_four_bg">
-                                    <h1 className="text-center ">404</h1>
-                                </div>
+                    <p className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        Uh-oh!
+                    </p>
 
-                                <div className="contant_box_404 tablet:mt-4">
-                                    <h3 className="h2">
-                                        Look like you're lost 🧐
-                                    </h3>
+                    <p className="mt-4 text-gray-500">We can't find that page.</p>
 
-                                    <p className="">
-                                        The page you are looking for is not available!
-                                    </p>
+                    <Link to="/" className="btn mt-6 text-white hover:bg-[#010886] normal-case font-medium border-none bg-[#010886]/90 ">Go Back Home</Link>
 
-                                    <Link to="/" className="btn text-white bg-[#010886] mt-2 border-none hover:bg-[#010886]/75 ">Go to Home</Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section>
+            </div>
 
         </div>
     )
