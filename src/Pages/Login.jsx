@@ -157,7 +157,7 @@ const Login = () => {
                     <p className="-mt-4 text-sm text-gray-500">
                       No account? &nbsp;
                       <Link to="/signup"
-                        className="text-gray-700 link link-hover">
+                        className="text-[#0071F2] font-semibold text-sm link link-hover">
                         Sign up
                       </Link>.
                     </p>
@@ -166,7 +166,7 @@ const Login = () => {
                   <div className="col-span-6">
                     <p className="mt- text-sm sm:mt-0">
                       Having problems logging in? &nbsp;
-                      <a className="text-[#0071F2] font-semibold link link-hover">Chat with us</a>.
+                      <a className="text-[#0071F2] text-sm font-semibold link link-hover">Chat with us</a>.
                     </p>
                   </div>
                 </form>

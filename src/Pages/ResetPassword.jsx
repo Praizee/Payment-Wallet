@@ -127,7 +127,7 @@ const ResetPassword = () => {
                                     <div className="col-span-6">
                                         <p className="mt- text-sm sm:mt-0">
                                             Having problems logging in? &nbsp;
-                                            <a className="text-[#0071F2] font-semibold link link-hover">Chat with us</a>.
+                                            <a className="text-[#0071F2] font-semibold text-sm link link-hover">Chat with us</a>.
                                         </p>
                                     </div>
                                 </form>

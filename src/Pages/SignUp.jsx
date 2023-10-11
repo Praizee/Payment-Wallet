@@ -206,33 +206,35 @@ const SignUp = () => {
                   <div className="col-span-6">
                     <p className="text-[0.725rem] text-gray-500">
                       By creating an account, you agree to our &nbsp;
-                      <a className="text-gray-700 link link-hover ">
+                      <a className="text-[#0071F2] text-[0.725rem] link link-hover ">
                         terms and conditions
                       </a>
                       &nbsp; and &nbsp;
-                      <a className="text-gray-700 link link-hover">privacy policy</a>.
+                      <a className="text-[#0071F2] text-[0.725rem] link link-hover">privacy policy</a>.
                     </p>
                   </div>
 
-                  <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+                  <div className="col-span-6">
                     <button
-                      className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                      className="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                     >
                       Create an account
                     </button>
 
-                    <p className="mt-4 text-sm text-gray-500 sm:mt-0">
-                      Already have an account? &nbsp;
-                      <Link to="/"
-                        className="text-gray-700 link link-hover">
-                        Log in
-                      </Link>.
-                    </p>
                   </div>
+
+                  <p className="-mt-4 col-span-6 text-sm text-gray-500">
+                    Already have an account? &nbsp;
+                    <Link to="/"
+                      className="text-[#0071F2] font-semibold text-sm link link-hover">
+                      Log in
+                    </Link>.
+                  </p>
+
                   <div className="col-span-6 sm:flex sm:items-center mx-auto sm:gap-4">
                     <p className="mt-4 text-sm sm:mt-0">
                       Have any questions? &nbsp;
-                      <a className="text-[#0071F2] font-semibold link link-hover">Chat with us</a>.
+                      <a className="text-[#0071F2] text-sm font-semibold link link-hover">Chat with us</a>.
                     </p>
                   </div>
                 </form>
