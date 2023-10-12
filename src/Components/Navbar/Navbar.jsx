@@ -5,7 +5,6 @@ import { FiMenu } from "react-icons/fi";
 import { LuBell, LuScanLine, LuSun, LuMoon } from "react-icons/lu";
 import { IoChatboxEllipsesOutline, IoMoonOutline } from "react-icons/io5";
 import UserPic from "../../assets/Userpic.png"
-import Star from "../../../public/Star.svg"
 
 
 const Navbar = () => {
@@ -26,7 +25,6 @@ const Navbar = () => {
         <div className="flex-1 mx-4">
           <a className="leading-[1.5rem] text-black font-black text-[1.5rem]">
             Logo
-            {/* <img src={Star} className="w-10" alt="Logo" /> */}
           </a>
         </div>
       </div>
