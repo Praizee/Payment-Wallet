@@ -22,10 +22,10 @@ const Navbar = ({ toggleSidebar }) => {
       </div>
       <div className="navbar-end gap-">
         <div className="gap-[0.05rem]">
-          <button className="btn btn-ghost btn-circle" title="Scan QR Code">
+          <button className="btn btn-ghost btn-circle hidden tablet:inline" title="Scan QR Code">
             <LuScanLine size={23} />
           </button>
-          <button className="btn btn-ghost btn-circle" title="Get Help">
+          <button className="btn btn-ghost btn-circle hidden tablet:inline" title="Get Help">
             <IoChatboxEllipsesOutline size={23} />
           </button>
           <button className="btn btn-ghost btn-circle" title="Notifications">
@@ -41,7 +41,7 @@ const Navbar = ({ toggleSidebar }) => {
           </button>
         </div>
         <div className="">
-          <span className="hidden tablet:flex mx-4 gap-2 justify-between">
+          <span className="hidden md:flex mx-4 gap-2 justify-between">
             <span className="py-1">
               <img src={UserPic} alt="User-pic" className="rounded-full" />
             </span>
