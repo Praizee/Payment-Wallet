@@ -20,7 +20,8 @@ const AuthenticatedLayout = () => {
           <SidebarWithSearch showSidebar={showSidebar} /> {/* Pass the showSidebar state to the SidebarWithSearch */}
         </div>
 
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200 dark:bg-gray-900">
+        <main className="flex-1 overflow-x-auto overflow-y-auto bg-gray-200 dark:bg-gray-900">
+          {/* overflow-x-hidden */}
           <div className="container mx-auto px-6 py-8">
             <Outlet />
           </div>
