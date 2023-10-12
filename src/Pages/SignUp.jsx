@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -9,6 +10,18 @@ const animationConfiguration = {
 };
 
 const SignUp = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState('');
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
 
   return (
     <section className="text-black bg-[#F6F6F6]">
@@ -156,35 +169,49 @@ const SignUp = () => {
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
-                    <label
-                      htmlFor="Password"
-                      className="block text-sm font-medium text-gray-700"
-                    >
+                    <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
                       Password
                     </label>
-
-                    <input
-                      type="password"
-                      id="Password"
-                      name="password"
-                      className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                    />
+                    <div className="relative">
+                      <input
+                        type={showPassword ? 'text' : 'password'}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        id="Password"
+                        name="password"
+                        className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                      <button
+                        type="button"
+                        className="absolute inset-y-0 right-0 grid w-10 place-content-center text-gray-600 hover:text-gray-700"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? <AiOutlineEyeInvisible size={23} title="Hide" /> : <AiOutlineEye size={23} title="Show" />}
+                      </button>
+                    </div>
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
-                    <label
-                      htmlFor="confirm-password"
-                      className="block text-sm font-medium text-gray-700"
-                    >
+                    <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">
                       Confirm Password
                     </label>
-
-                    <input
-                      type="password"
-                      id="confirm-password"
-                      name="confirm-password"
-                      className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                    />
+                    <div className="relative">
+                      <input
+                        type={showConfirmPassword ? 'text' : 'password'}
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        id="confirm-password"
+                        name="confirm-password"
+                        className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      />
+                      <button
+                        type="button"
+                        className="absolute inset-y-0 right-0 grid w-10 place-content-center text-gray-600 hover:text-gray-700"
+                        onClick={toggleConfirmPasswordVisibility}
+                      >
+                        {showConfirmPassword ? <AiOutlineEyeInvisible size={23} title="Hide" /> : <AiOutlineEye size={23} title="Show" />}
+                      </button>
+                    </div>
                   </div>
 
                   <div className="col-span-6">
@@ -196,7 +223,7 @@ const SignUp = () => {
                         className="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm"
                       />
 
-                      <span className="text-sm text-gray-700">
+                      <span className="text-[0.725rem] text-gray-700">
                         I want to receive emails about events, product updates and
                         company announcements.
                       </span>

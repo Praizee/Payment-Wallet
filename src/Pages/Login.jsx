@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -9,6 +10,12 @@ const animationConfiguration = {
 };
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState('');
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <section className="text-black bg-[#F6F6F6]">
@@ -108,21 +115,25 @@ const Login = () => {
                     />
                   </div>
 
-                  <div className="col-span-6 ">
-                    <label
-                      htmlFor="Password"
-                      className="block text-sm font-medium text-gray-700"
-                    >
+                  {/* password */}
+                  <div className="col-span-6 relative">
+                    <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
                       Password
                     </label>
-
                     <input
-                      type="password"
+                      type={showPassword ? 'text' : 'password'}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       id="Password"
-                      name="password"
-                      className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                      className="w-full mt-1 input rounded-md border-gray-200 py-2.5 px-2.5 pe-10 shadow-sm text-sm"
                     />
+                    <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
+                      <button type="button" className="text-gray-600 mt-6 hover:text-gray-700" onClick={togglePasswordVisibility}>
+                        {showPassword ? <AiOutlineEyeInvisible size={23} title="Hide" /> : <AiOutlineEye size={23} title="Show" />}
+                      </button>
+                    </span>
                   </div>
+                  {/* end of password */}
 
                   <div className="col-span-6 flex justify-between">
                     <label htmlFor="MarketingAccept" className="flex gap-2">
