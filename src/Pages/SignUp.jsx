@@ -122,6 +122,8 @@ const SignUp = () => {
                       type="text"
                       id="FirstName"
                       name="first_name"
+                      required
+                      autoFocus
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>
@@ -138,6 +140,7 @@ const SignUp = () => {
                       type="text"
                       id="LastName"
                       name="last_name"
+                      required
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>
@@ -151,6 +154,7 @@ const SignUp = () => {
                       type="email"
                       id="Email"
                       name="email"
+                      required
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>
@@ -164,6 +168,7 @@ const SignUp = () => {
                       type="tel"
                       id="Phone"
                       name="phone-number"
+                      required
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>
@@ -179,6 +184,7 @@ const SignUp = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         id="Password"
                         name="password"
+                        required
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                       />
                       <button
@@ -202,6 +208,7 @@ const SignUp = () => {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         id="confirm-password"
                         name="confirm-password"
+                        required
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                       />
                       <button

@@ -111,6 +111,8 @@ const Login = () => {
                       type="email"
                       id="Email"
                       name="email"
+                      required
+                      autoFocus
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>
@@ -125,6 +127,7 @@ const Login = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       id="Password"
+                      required
                       className="w-full mt-1 input rounded-md border-gray-200 py-2.5 px-2.5 pe-10 shadow-sm text-sm"
                     />
                     <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
