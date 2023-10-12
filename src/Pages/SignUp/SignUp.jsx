@@ -145,7 +145,7 @@ const SignUp = () => {
                     />
                   </div>
 
-                  <div className="col-span-6 sm:col-span-3">
+                  <div className="col-span-6">
                     <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
                       Email
                     </label>
@@ -159,21 +159,7 @@ const SignUp = () => {
                     />
                   </div>
 
-                  <div className="col-span-6 sm:col-span-3">
-                    <label htmlFor="Phone" className="block text-sm font-medium text-gray-700">
-                      Phone Number
-                    </label>
-
-                    <input
-                      type="tel"
-                      id="Phone"
-                      name="phone-number"
-                      required
-                      className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                    />
-                  </div>
-
-                  <div className="col-span-6 sm:col-span-3">
+                  <div className="col-span-6">
                     <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
                       Password
                     </label>
@@ -193,30 +179,6 @@ const SignUp = () => {
                         onClick={togglePasswordVisibility}
                       >
                         {showPassword ? <AiOutlineEyeInvisible size={23} title="Hide" /> : <AiOutlineEye size={23} title="Show" />}
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="col-span-6 sm:col-span-3">
-                    <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">
-                      Confirm Password
-                    </label>
-                    <div className="relative">
-                      <input
-                        type={showConfirmPassword ? 'text' : 'password'}
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        id="confirm-password"
-                        name="confirm-password"
-                        required
-                        className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                      />
-                      <button
-                        type="button"
-                        className="absolute inset-y-0 right-0 grid w-10 place-content-center text-gray-600 hover:text-gray-700"
-                        onClick={toggleConfirmPasswordVisibility}
-                      >
-                        {showConfirmPassword ? <AiOutlineEyeInvisible size={23} title="Hide" /> : <AiOutlineEye size={23} title="Show" />}
                       </button>
                     </div>
                   </div>
