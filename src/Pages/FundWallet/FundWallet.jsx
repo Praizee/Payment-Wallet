@@ -2,7 +2,13 @@ import React from 'react'
 
 const FundWallet = () => {
     return (
-        <div>FundWallet</div>
+        <div className="container pt-24 pb-16 laptop:mr-[rem]">
+            <div className=''>
+                <h1>
+                    Fund Wallet
+                </h1>
+            </div>
+        </div>
     )
 }
 

@@ -2,7 +2,13 @@ import React from 'react'
 
 const BuyRecharge = () => {
     return (
-        <div>BuyRecharge</div>
+        <div className="container pt-24 pb-16 laptop:mr-[rem]">
+            <div className=''>
+                <h1>
+                    Buy Recharge
+                </h1>
+            </div>
+        </div>
     )
 }
 

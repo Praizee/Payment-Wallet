@@ -1,15 +1,15 @@
 import React from 'react'
 
 const Contact = () => {
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // }
-
 
   return (
     <section>
-      <div>
-
+      <div className="container pt-24 pb-16 laptop:mr-[rem]">
+        <div className=''>
+          <h1>
+            Contact
+          </h1>
+        </div>
       </div>
     </section>
   )
