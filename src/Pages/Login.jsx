@@ -61,7 +61,7 @@ const Login = () => {
                 </h2>
 
                 <p className="mt-4 leading-relaxed text-gray-200">
-                  Login to your Account
+                  Login to your Account to continue.
                 </p>
               </div>
             </section>
@@ -96,7 +96,7 @@ const Login = () => {
                   </h1>
 
                   <p className="mt-4 leading-relaxed text-gray-500">
-                    Login to your Account
+                    Login to your Account to continue.
                   </p>
                 </div>
 
@@ -169,7 +169,7 @@ const Login = () => {
 
                   <div className="col-span-6 sm:gap-4">
                     <p className="-mt-4 text-sm text-gray-500">
-                      No account? &nbsp;
+                      Don't have an account? &nbsp;
                       <Link to="/signup"
                         className="text-[#0071F2] font-semibold text-sm link link-hover">
                         Sign up
