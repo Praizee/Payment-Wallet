@@ -34,7 +34,7 @@ export default function App() {
 
         <Route element={<AuthenticatedLayout />}>
           {/* <Route index element={<Dashboard />} /> */}
-          {/* change this back to the index element when the authentication is setup */}
+          {/* change this back to being the index element when the authentication endpoint is setup */}
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
           <Route path="pin-management" element={<PinManagement />} />
