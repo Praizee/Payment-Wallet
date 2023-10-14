@@ -2,9 +2,12 @@ import React from 'react'
 
 const Profile = () => {
     return (
-        <div className="container pt-20 pb-">
+        <div className="container pt-20 pb-0">
 
-            <div className='bg-white px-4 py-8 tablet:p-8 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+            <div className='bg-white px-4 py-8 tablet:p-6 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+                <h1 className="text-[2rem] text-center mt-4 mb-2 text-[#2E2E3A] leading-normal font-bold">
+                    Profile
+                </h1>
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent py-4'>
                     <h2 className='font-semibold'>Username</h2>
