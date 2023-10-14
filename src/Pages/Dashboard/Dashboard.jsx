@@ -22,17 +22,24 @@ const Dashboard = () => {
         exit="exit"
         transition={{ duration: 3 }}
       >
-        <div className="container pt-24 pb-16 laptop:mr-[rem]">
+        <div className="container pt-24 pb-16 px-">
 
           <div className="flex gap-4 justify-betwee relative">
 
-            <div className="relative space-y-4">
+            <div className="relative space-y-1">
+              <h1 className="text-[1.2rem] text-[#2E2E3A] leading-normal font-bold">
+                Good day, &nbsp;
+                <span className="text-blue-500 text-[1.2rem]">
+                  User
+                </span>
+              </h1>
+
               <h1 className="text-[2.5rem] text-[#2E2E3A] leading-normal font-bold">
                 Overview
               </h1>
 
               <div className="laptop:flex gap-4 justify-between">
-                <HeaderGraph />
+                {/* <HeaderGraph /> */}
                 <AvailableBalance />
               </div>
 

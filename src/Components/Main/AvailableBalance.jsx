@@ -22,22 +22,22 @@ const AvailableBalance = () => {
     return (
         <section className="">
             <div className="">
-                <div className="balance max-w-[20.5rem] min-w-[19.5rem] h-[24.4375rem] px-5 py-6 leading-normal space-y-2 rounded-[1.2rem] text-white">
+                <div className="balance max-w-[20.5rem] min-w-[19.5rem]  px-5 py-6 leading-normal space-y-2 rounded-[1.2rem] text-white">
                     <p className="text-[0.75rem] font-semibold">
-                        AVAILABLE BALANCE
+                        WALLET BALANCE
                     </p>
                     <div>
-                        <Balance initialBalance={123456} />
+                        <Balance initialBalance={225650} />
                         <span>
                             <p className="text-[0.75rem] font-medium">
                                 *This balance is available to withdraw
                             </p>
                             <hr className="my-4 " />
                             <p className="text-[0.75rem] font-semibold">
-                                LEDGER BALANCE
+                                BONUS BALANCE
                             </p>
                         </span>
-                        <Balance initialBalance={654321} />
+                        <Balance initialBalance={1250} />
                     </div>
                     <select name="bank" id="bank"
                         className="text-[0.9375rem] w-full leading-normal font-semibold p-2 bg-transparent border border-white rounded-lg"
@@ -76,6 +76,9 @@ const AvailableBalance = () => {
                         {/* Include the CopyButton component here */}
                         <CopyButton selectedBank={selectedBank} />
                     </span>
+                    <p className="text-[0.75rem] font-medium">
+                        Make transfer to any of these accounts to fund your wallet
+                    </p>
                 </div>
             </div>
         </section>

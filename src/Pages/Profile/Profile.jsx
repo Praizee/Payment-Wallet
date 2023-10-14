@@ -2,14 +2,64 @@ import React from 'react'
 
 const Profile = () => {
     return (
-        <div className="container pt-24 pb-16 laptop:mr-[rem]">
-            <div className=''>
-                <h1>
-                    Profile
-                </h1>
+        <div className="container pt-20 pb-">
+
+            <div className='bg-white px-4 py-8 tablet:p-8 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+
+                <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent py-4'>
+                    <h2 className='font-semibold'>Username</h2>
+                    <p>Praizee</p>
+                </div>
+
+                <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
+                    <h2 className='font-semibold'>Phone Number</h2>
+                    <p>+2349012345678</p>
+                </div>
+
+                <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
+                    <h2 className='font-semibold'>Email</h2>
+                    <p>user@mail.com</p>
+                </div>
+
+                <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
+                    <h2 className='font-semibold'>Bank Name</h2>
+                    <p>Zenith Bank</p>
+                </div>
+
+                <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
+                    <h2 className='font-semibold'>Account Number</h2>
+                    <p>1234567890</p>
+                </div>
+
+                <button
+                    className="inline-block w-full my-4 rounded-md border border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                >
+                    Update
+                </button>
             </div>
         </div>
     )
 }
 
 export default Profile
+
+// Unused(prolly later)
+{/* <div className='flex justify-between bg-white p-10 text-left rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+
+<div className='px-10 space-y-6 border-2 border-slate-300 border-x-transparent'>
+    <h2 className='font-semibold'>Username</h2>
+    <h2 className='font-semibold'>Phone Number</h2>
+    <h2 className='font-semibold'>Email</h2>
+    <h2 className='font-semibold'>Bank Name</h2>
+    <h2 className='font-semibold'>Account Number</h2>
+</div>
+
+<div className='px-10 space-y-6'>
+    <p>Praizee</p>
+    <p>+2349012345678</p>
+    <p>user@mail.com</p>
+    <p>Zenith Bank</p>
+    <p>1234567890</p>
+</div>
+
+</div> */}
