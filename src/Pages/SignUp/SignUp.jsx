@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import SignUpImg from "../../assets/young-afro-man-listening-music-with-headphones_58466-16300.webp"
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -39,9 +40,10 @@ const SignUp = () => {
               className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
             >
               <img
-                alt="Night"
-                src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
-                className="absolute  inset-0 h-full w-full object-cover opacity-40"
+                alt="Young woman with afro"
+                // src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
+                src={SignUpImg}
+                className="absolute inset-0 h-full w-full object-cover opacity-40"
               />
 
               <div className="hidden lg:relative rounded-lg p-2 lg:block lg:p-12">

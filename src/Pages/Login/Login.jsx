@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import LoginImg from "../../assets/login.jpeg"
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -34,9 +35,9 @@ const Login = () => {
             >
 
               <img
-                alt="Night"
-                src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                // src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
+                alt="We're glad you're here"
+                // src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                src={LoginImg}
                 className="absolute inset-0 h-full w-full object-cover opacity-50"
               />
 
