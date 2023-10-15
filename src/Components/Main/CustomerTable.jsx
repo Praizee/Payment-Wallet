@@ -26,8 +26,8 @@ export const CustomerTable = () => {
             <a
                 key={i}
                 onClick={() => handlePageChange(i)}
-                className={`px-3 py-2 rounded-lg cursor-pointer text-white ${currentPage === i ?
-                    'bg-blue-400' :
+                className={`px-3 py-2 rounded-lg cursor-pointer text-black ${currentPage === i ?
+                    'bg-blue-400 text-white' :
                     'bg-white'}`}
             >
                 {i}
@@ -108,7 +108,7 @@ export const CustomerTable = () => {
                         <div className="inline-flex space-x-2 px-4 text-sm h-8">
                             <a
                                 onClick={() => handlePageChange(currentPage - 1)}
-                                className={`flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
+                                className={`flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-gray-100 cursor-pointer hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
                             >
                                 Prev
                             </a>
@@ -117,7 +117,7 @@ export const CustomerTable = () => {
                             </p>
                             <a
                                 onClick={() => handlePageChange(currentPage + 1)}
-                                className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === totalPages ? 'cursor-not-allowed' : 'hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
+                                className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === totalPages ? 'cursor-not-allowed' : 'hover:bg-gray-100 cursor-pointer hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
                             >
                                 Next
                             </a>
