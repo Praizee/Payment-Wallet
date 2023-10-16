@@ -1,11 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import { Outlet } from "react-router-dom";
 import ScrollButton from "../../Components/ScrollToTop/ScrollToTop";
 import Navbar from "../../Components/Navbar/Navbar";
 import { SidebarWithSearch } from "../../Components/SideBarMenu/SideBarMenu";
 
 const AuthenticatedLayout = () => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(false); // Initially set to false
+
+  useEffect(() => {
+    // Function to handle window resize
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setShowSidebar(true); // Show the sidebar for screens wider than or equal to 768px
+      }
+    };
+
+    // Add a resize event listener to the window
+    window.addEventListener('resize', handleResize);
+
+    // Call the handleResize function initially
+    handleResize();
+
+    // Clean up by removing the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
