@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
     Card, List, ListItem, ListItemPrefix, Accordion,
-    AccordionHeader, AccordionBody, Alert, Input,
+    AccordionHeader, AccordionBody, Alert,
 } from "@material-tailwind/react";
 import {
     ChevronRightIcon, ChevronDownIcon,
