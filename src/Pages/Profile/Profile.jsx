@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
     return (
@@ -34,13 +35,12 @@ const Profile = () => {
                     <p>1234567890</p>
                 </div>
 
-                <button
-                    className="inline-block w-full my-4 rounded-md border border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                >
+                <Link to="/settings"
+                    className="inline-block text-center w-full my-4 rounded-md border border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
                     Update
-                </button>
+                </Link>
             </div>
-        </div>
+        </div >
     )
 }
 
