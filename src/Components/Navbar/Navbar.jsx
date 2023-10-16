@@ -22,10 +22,10 @@ const Navbar = ({ toggleSidebar }) => {
       </div>
       <div className="navbar-end gap-">
         <div className="gap-[0.05rem]">
-          <button className="btn btn-ghost btn-circle hidden tablet:inline" title="Scan QR Code">
+          <button className="btn btn-ghost btn-circle hidden tablet:inline-flex" title="Scan QR Code">
             <LuScanLine size={23} />
           </button>
-          <button className="btn btn-ghost btn-circle hidden tablet:inline" title="Get Help">
+          <button className="btn btn-ghost btn-circle hidden tablet:inline-flex" title="Get Help">
             <IoChatboxEllipsesOutline size={23} />
           </button>
           <button className="btn btn-ghost btn-circle" title="Notifications">

@@ -26,15 +26,15 @@ const Dashboard = () => {
 
           <div className="flex gap-4 justify-betwee relative">
 
-            <div className="relative space-y-1">
-              <h1 className="text-[1.2rem] text-[#2E2E3A] leading-normal font-bold">
+            <div className="relative space-y-4">
+              <h1 className="text-[1.2rem] text-[#2E2E3A] leading-tight font-bold">
                 Good day, &nbsp;
                 <span className="text-blue-500 text-[1.2rem]">
                   User
                 </span>
               </h1>
 
-              <h1 className="text-[2.5rem] text-[#2E2E3A] leading-normal font-bold">
+              <h1 className="text-[2rem] text-[#2E2E3A] leading-normal font-bold">
                 Overview
               </h1>
 
