@@ -232,13 +232,13 @@ export function SidebarWithSearch({ showSidebar }) {
                     such as DTSV, GOTV, Startimes; as well as Electricity bills.
                 </p>
                 <div className="mt-4 flex gap-3">
-                    <a
+                    <a onClick={() => setOpenAlert(false)}
                         className="text-sm cursor-pointer font-medium text-warning"
-                        onClick={() => setOpenAlert(false)}
                     >
                         Dismiss
                     </a>
-                    <Link to="topup" className="text-sm cursor-pointer font-medium text-success">
+                    <Link to="topup" onClick={() => setOpenAlert(false)}
+                        className="text-sm cursor-pointer font-medium text-success">
                         Try Now
                     </Link>
                 </div>
