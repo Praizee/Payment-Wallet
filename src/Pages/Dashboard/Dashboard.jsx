@@ -47,7 +47,7 @@ const Dashboard = () => {
                 <Statistics />
               </div>
 
-              <div className="">
+              <div className="overflow-x-auto max-w-[20.5rem] min-w-[19.5rem] tablet:max-w-[35.5rem] laptop:max-w-full">
                 <CustomerTable />
               </div>
             </div>

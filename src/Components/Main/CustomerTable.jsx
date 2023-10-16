@@ -38,7 +38,7 @@ export const CustomerTable = () => {
     return (
         <section>
             <div>
-                <div className="overflow-x-auto shadow-md sm:rounded-lg">
+                <div className="overflow-x-auto shadow-md sm:rounded-t-lg">
                     <table className="w-full table-auto text-sm text-left text-gray-500 dark:text-gray-400">
                         {/* Table header */}
                         <thead className="text-xs text-gray-700 bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
@@ -100,61 +100,32 @@ export const CustomerTable = () => {
                         ))}
                     </table>
 
-                    {/* Pagination */}
-                    <nav className="flex items-center justify-between py-4" aria-label="Table navigation">
-                        <span className="text-sm font-normal px-6 text-gray-500 dark:text-gray-400">
-                            Showing <span className="font-semibold text-gray-900 dark:text-white">{startIndex + 1}-{endIndex}</span> of <span className="font-semibold text-gray-900 dark:text-white">{CustomerTableData.length}</span>
-                        </span>
-                        <div className="inline-flex space-x-2 px-4 text-sm h-8">
-                            <a
-                                onClick={() => handlePageChange(currentPage - 1)}
-                                className={`flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-gray-100 cursor-pointer hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
-                            >
-                                Prev
-                            </a>
-                            <p className='py-2'>
-                                {paginationButtons}
-                            </p>
-                            <a
-                                onClick={() => handlePageChange(currentPage + 1)}
-                                className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === totalPages ? 'cursor-not-allowed' : 'hover:bg-gray-100 cursor-pointer hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
-                            >
-                                Next
-                            </a>
-                        </div>
-                    </nav>
                 </div>
+
+                {/* Pagination */}
+                <nav className="flex items-center bg-white rounded-b-lg justify-between py-4" aria-label="Table navigation">
+                    <span className="text-sm font-normal px-6 text-gray-500 dark:text-gray-400">
+                        Showing <span className="font-semibold text-gray-900 dark:text-white">{startIndex + 1}-{endIndex}</span> of <span className="font-semibold text-gray-900 dark:text-white">{CustomerTableData.length}</span>
+                    </span>
+                    <div className="inline-flex space-x-2 px-4 text-sm h-8">
+                        <a
+                            onClick={() => handlePageChange(currentPage - 1)}
+                            className={`flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-gray-100 cursor-pointer hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
+                        >
+                            Prev
+                        </a>
+                        <p className='py-2'>
+                            {paginationButtons}
+                        </p>
+                        <a
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white rounded-lg border ${currentPage === totalPages ? 'cursor-not-allowed' : 'hover:bg-gray-100 cursor-pointer hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'}`}
+                        >
+                            Next
+                        </a>
+                    </div>
+                </nav>
             </div>
         </section>
     )
 }
-
-
-// Basic Table
-
-{/* <table class="table-auto">
-  <thead>
-    <tr>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-      <td>Malcolm Lockyer</td>
-      <td>1961</td>
-    </tr>
-    <tr>
-      <td>Witchy Woman</td>
-      <td>The Eagles</td>
-      <td>1972</td>
-    </tr>
-    <tr>
-      <td>Shining Star</td>
-      <td>Earth, Wind, and Fire</td>
-      <td>1975</td>
-    </tr>
-  </tbody>
-</table> */}
