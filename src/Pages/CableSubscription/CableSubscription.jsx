@@ -55,73 +55,85 @@ const CableSubscription = () => {
     };
 
 
-
     return (
         <div className="container pt-24 pb-0">
-            <div className='bg-white space-y-4 px-4 py-8 tablet:p-6 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
-                <h1 className="text-[2rem] text-center mt-4 mb-2 text-[#2E2E3A] leading-normal font-bold">
-                    Cable Subscription
-                </h1>
 
-                <div className='py-2 space-y-2'>
-                    <label htmlFor='payment-options' className='text-[0.825rem] block'>
-                        Cable Name*
-                    </label>
+            <div className=''>
+                <div className='bg-white space-y-4 px-4 py-8 tablet:p-6 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+                    <h1 className="text-[2rem] text-center mt-4 mb-2 text-[#2E2E3A] leading-normal font-bold">
+                        Cable Subscription
+                    </h1>
 
-                    <select name='payment-options' value={service}
-                        id='payment-options'
-                        onChange={handleServiceChange}
-                        className=' w-full p-2 text-[0.85rem] border border-gray-400 rounded-lg'>
-                        <option value="">Select a service</option>
-                        {serviceOptions.map((option) => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                    <div className='py-2 space-y-2'>
+                        <label htmlFor='payment-options' className='text-[0.825rem] block'>
+                            Cable Name*
+                        </label>
 
-                <div className='py-2 space-y-2'>
-                    <label htmlFor='payment-options' className='text-[0.825rem] block'>
-                        Smart Card number / IUC number*
-                    </label>
-
-                    <input
-                        type="number"
-                        id="FirstName"
-                        name="first_name"
-                        className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                    />
-                </div>
-
-                <div className='py-2 space-y-2'>
-                    <label htmlFor='payment-options' className='text-[0.825rem] block'>
-                        Cable Plan*
-                    </label>
-
-                    {plans.length > 0 && (
-                        <select name='payment-options' id='payment-options'
+                        <select name='payment-options' value={service}
+                            id='payment-options'
+                            onChange={handleServiceChange}
                             className=' w-full p-2 text-[0.85rem] border border-gray-400 rounded-lg'>
-                            {plans.map((plan) => (
-                                <option key={plan.value} value={plan.value}>
-                                    {plan.label}
+                            <option value="">Select a service</option>
+                            {serviceOptions.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                    {option.label}
                                 </option>
                             ))}
                         </select>
-                    )}
-                </div>
+                    </div>
 
-                {/* <div
+                    <div className='py-2 space-y-2'>
+                        <label htmlFor='payment-options' className='text-[0.825rem] block'>
+                            Smart Card number / IUC number*
+                        </label>
+
+                        <input
+                            type="number"
+                            id="FirstName"
+                            name="first_name"
+                            className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                        />
+                    </div>
+
+                    <div className='py-2 space-y-2'>
+                        <label htmlFor='payment-options' className='text-[0.825rem] block'>
+                            Cable Plan*
+                        </label>
+
+                        {plans.length > 0 && (
+                            <select name='payment-options' id='payment-options'
+                                className=' w-full p-2 text-[0.85rem] border border-gray-400 rounded-lg'>
+                                {plans.map((plan) => (
+                                    <option key={plan.value} value={plan.value}>
+                                        {plan.label}
+                                    </option>
+                                ))}
+                            </select>
+                        )}
+                    </div>
+
+                    {/* <div
                     className="input py-3 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm">
                     N10.0 Charge
                 </div> */}
 
-                <button
-                    className="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                >
-                    Buy Now
-                </button>
+                    <button
+                        className="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                    >
+                        Buy Now
+                    </button>
 
+                </div>
+
+                <div className='pt-4 px-4'>
+                    <p className='text-[0.8rem] text-black/60'>
+                        * You can contact DSTV/GOtv's customers
+                        care unit on 01-2703232/08039003788 or the
+                        toll free lines: 08149860333, 07080630333,
+                        and 09090630333 for assistance, STARTIMES's
+                        customers care unit on (094618888, 014618888).
+                    </p>
+                </div>
             </div>
         </div>
     )
