@@ -17,6 +17,7 @@ import { RxAvatar } from "react-icons/rx";
 import { RiLayout6Line } from "react-icons/ri";
 import { GoMegaphone } from "react-icons/go";
 import { GrTransaction } from "react-icons/gr";
+import { FaCircleUser } from "react-icons/fa6";
 
 
 
@@ -36,6 +37,10 @@ export function SidebarWithSearch({ showSidebar }) {
         >
 
             <List>
+                {/* <div className=" mx-auto py-2">
+                    <FaCircleUser size={60} />
+                </div> */}
+
                 <Link to="dashboard">
                     {/* to="/" */}
                     <ListItem className="py-2">

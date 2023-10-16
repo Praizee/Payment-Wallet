@@ -89,11 +89,12 @@ const Transfer = () => {
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                 </div>
+                {/* probably add the amount to be sent to the button/confirmation prompt... */}
 
                 <button
                     className="inline-block w-full my-4 rounded-md border border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                 >
-                    Proceed
+                    Send Money
                 </button>
             </div>
         </div>
