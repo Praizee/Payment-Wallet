@@ -33,11 +33,11 @@ const AuthenticatedLayout = () => {
 
   return (
     <div className="flex h-screen">
-      <Navbar toggleSidebar={toggleSidebar} /> {/* Pass the toggleSidebar function to the Navbar */}
+      <Navbar toggleSidebar={toggleSidebar} /> {/* this Passes the toggleSidebar function to the Navbar */}
 
       <div className="flex-1 flex overflow-hidden">
         <div className=" mt-[5.5rem] h-ful overflow-y-auto">
-          <SidebarWithSearch showSidebar={showSidebar} /> {/* Pass the showSidebar state to the SidebarWithSearch */}
+          <SidebarWithSearch showSidebar={showSidebar} /> {/* this Passes the showSidebar state to the SidebarWithSearch */}
         </div>
 
         <main className="flex-1 overflow-x-auto overflow-y-auto bg-[#F6F6F6] dark:bg-gray-900">
