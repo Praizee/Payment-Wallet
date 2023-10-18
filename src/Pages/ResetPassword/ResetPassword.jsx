@@ -17,7 +17,7 @@ const ResetPassword = () => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                transition={{ duration: 3 }}
+                transition={{ duration: 0.8 }}
             >
 
                 <section className="bg-white">
