@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import PublicLayout from "../Layouts/PublicLayout";
 import AuthenticatedLayout from "../Layouts/AuthenticatedLayout";
 import Contact from "../Pages/Contact/Contact";
