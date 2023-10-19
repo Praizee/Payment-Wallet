@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet } from "react-router-dom";
-import ScrollButton from "../../Components/ScrollToTop/ScrollToTop";
-import Navbar from "../../Components/Navbar/Navbar";
-import { SidebarWithSearch } from "../../Components/SideBarMenu/SideBarMenu";
+import ScrollButton from "../Components/ScrollToTop/ScrollToTop";
+import Navbar from "../Components/Navbar/Navbar";
+import { SidebarWithSearch } from "../Components/SideBarMenu/SideBarMenu";
 
 const AuthenticatedLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false); // Initially set to false
