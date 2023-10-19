@@ -15,8 +15,8 @@ const ChangePassword = () => {
                     </label>
                     <input
                         type='password'
-                        id="change-old-pin"
-                        name="change-old-pin"
+                        id="enter-old-password"
+                        name="enter-new-password"
                         required
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
@@ -28,8 +28,8 @@ const ChangePassword = () => {
                     </label>
                     <input
                         type='password'
-                        id="change-new-pin"
-                        name="change-new-pin"
+                        id="enter-new-password"
+                        name="enter-new-password"
                         required
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
@@ -56,8 +56,8 @@ const ChangePassword = () => {
                     </label>
                     <input
                         type='password'
-                        id="change-new-pin"
-                        name="change-new-pin"
+                        id="confirm-new-password"
+                        name="confirm-new-password"
                         required
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />

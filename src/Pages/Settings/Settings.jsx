@@ -15,7 +15,8 @@ const Settings = () => {
                         Bank Name
                     </label>
 
-                    <select name='payment-options' id='payment-options'
+                    <select name='payment-options'
+                        id='payment-options' defaultValue="Zenith Bank"
                         className=' w-full p-2 text-[0.85rem] border border-gray-400 rounded-lg'>
                         <option value="">--SELECT BANK--</option>
                         <option value="Access Bank">Access Bank</option>
@@ -36,7 +37,7 @@ const Settings = () => {
                         <option value="Union Bank">Union Bank</option>
                         <option value="Unity Bank">Unity Bank</option>
                         <option value="Wema Bank">Wema Bank</option>
-                        <option value="Zenith Bank" selected>Zenith Bank</option>
+                        <option value="Zenith Bank">Zenith Bank</option>
                     </select>
                 </div>
 
@@ -49,7 +50,7 @@ const Settings = () => {
                         type="text"
                         id="account-name"
                         name="account-name"
-                        value="FIRST MIDDLE SURNAME "
+                        defaultValue="FIRST MIDDLE SURNAME "
                         // change this value to the actual value of the account name: value={}
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
@@ -64,7 +65,7 @@ const Settings = () => {
                         type="number"
                         id="FirstName"
                         name="first_name"
-                        value="1234567890"
+                        defaultValue="1234567890"
                         // change this value to the actual value of the account number: value={}
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />

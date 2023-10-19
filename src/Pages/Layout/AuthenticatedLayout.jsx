@@ -42,7 +42,7 @@ const AuthenticatedLayout = () => {
 
         <main className="flex-1 overflow-x-auto overflow-y-auto bg-[#F6F6F6] dark:bg-gray-900">
           {/* overflow-x-hidden */}
-          <div className="container mx-auto px-6 py-8">
+          <div className="container mx-auto px-3 tablet:px-6 py-8">
             <Outlet />
           </div>
         </main>
