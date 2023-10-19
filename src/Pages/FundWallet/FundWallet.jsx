@@ -39,9 +39,9 @@ const FundWallet = () => {
                     </select>
                 </div>
 
-                <div className=' text-right'>
+                <div className='text-right'>
                     <button
-                        className="btn normal-case border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 hover:border-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                        className="btn normal-case border-blue-600 bg-blue-600 py-3 px- text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 hover:border-blue-600 focus:outline-none focus:ring active:text-blue-500"
                     >
                         Proceed
                     </button>

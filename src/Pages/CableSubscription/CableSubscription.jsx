@@ -113,15 +113,17 @@ const CableSubscription = () => {
                     </div>
 
                     {/* <div
-                    className="input py-3 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm">
-                    N10.0 Charge
-                </div> */}
+                        className="input py-3 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm">
+                        N10.00 Charge
+                    </div> */}
 
-                    <button
-                        className="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                    >
-                        Buy Now
-                    </button>
+                    <div className='flex mt-4'>
+                        <button
+                            className="inline-block px-6 py-3 mx-auto shrink-0 rounded-md border border-blue-600 bg-blue-600 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                        >
+                            Buy Now
+                        </button>
+                    </div>
 
                 </div>
 

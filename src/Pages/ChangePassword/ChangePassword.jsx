@@ -50,7 +50,7 @@ const ChangePassword = () => {
                     </p>
                 </div>
 
-                <div className=' px-4 tablet:px-0'>
+                <div className=''>
                     <label htmlFor="change-new-pin" className="block text-sm font-medium text-gray-700">
                         Confirm New Password*
                     </label>
@@ -62,12 +62,13 @@ const ChangePassword = () => {
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                 </div>
-
-                <button
-                    className="inline-block w-full my-4 rounded-md border border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                >
-                    Proceed
-                </button>
+                <div className='flex mt-4'>
+                    <button
+                        className="inline-block mx-auto px-6 rounded-md border border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                    >
+                        Proceed
+                    </button>
+                </div>
             </div>
         </div>
     )

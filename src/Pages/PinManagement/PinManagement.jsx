@@ -3,7 +3,7 @@ import React from 'react'
 const PinManagement = () => {
     return (
         <div className="container pt-24 laptop:mr-[rem]">
-            <div className='laptop:flex gap-20 space-y-20 tablet:place-content-center tablet:px-10'>
+            <div className='laptop:flex gap-20 space-y-20 laptop:space-y-0 tablet:place-content-center tablet:px-10'>
                 <div className='bg-white tablet:min-w-[22rem] my-10 space-y-4 tablet:my-0 px-4 py-8 tablet:p-6 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
                     <h1 className="text-[2rem] text-center mt-4 mb-2 text-[#2E2E3A] leading-normal font-bold">
                         Change Your Pin

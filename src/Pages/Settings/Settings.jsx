@@ -91,12 +91,13 @@ const Settings = () => {
                     Forgot password?
                 </Link>
 
-
-                <button
-                    className="inline-block w-full my-4 rounded-md border border-blue-600 bg-blue-600 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                >
-                    Proceed
-                </button>
+                <div className='flex mt-4'>
+                    <button
+                        className="inline-block px-6 py-3 mx-auto rounded-md border border-blue-600 bg-blue-600 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                    >
+                        Proceed
+                    </button>
+                </div>
             </div>
         </div>
     )
