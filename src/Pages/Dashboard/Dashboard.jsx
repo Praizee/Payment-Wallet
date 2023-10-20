@@ -10,7 +10,7 @@ const Dashboard = () => {
     <section className="text-black bg-[#F6F6F6]">
       <div className="container pt-24 pb-16 px-">
 
-        <div className="flex gap-4 justify-betwee relative">
+        <div className="tablet:px-4 px-0 relative">
 
           <div className="relative space-y-4">
             <h1 className="text-[1.2rem] text-[#2E2E3A] leading-tight font-bold">
