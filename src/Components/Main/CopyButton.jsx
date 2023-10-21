@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import Notification from "../Notification/Notification";
+import Notification from "../Notification/TextCopyNotification";
 
 const CopyButton = ({ selectedBank }) => {
     const [showNotification, setShowNotification] = useState(false);
