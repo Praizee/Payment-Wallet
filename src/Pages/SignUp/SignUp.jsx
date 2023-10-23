@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../Firebase/firebase.js';
+
 import { motion } from "framer-motion";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import SignUpImg from "../../assets/young-afro-man-listening-music-with-headphones_58466-16300.webp"
@@ -11,17 +14,38 @@ const animationConfiguration = {
 };
 
 const SignUp = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        console.log('User Signed up successfully!');
+        navigate("/")
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        console.log("Email is already in use");
+        // ..
+      });
+
+
+  }
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
@@ -123,7 +147,8 @@ const SignUp = () => {
                       type="text"
                       id="FirstName"
                       name="first_name"
-                      required
+                      // required
+                      placeholder="First name"
                       autoFocus
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
@@ -141,7 +166,8 @@ const SignUp = () => {
                       type="text"
                       id="LastName"
                       name="last_name"
-                      required
+                      // required
+                      placeholder="Last name"
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>
@@ -154,8 +180,10 @@ const SignUp = () => {
                     <input
                       type="email"
                       id="Email"
-                      name="email"
                       required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email address"
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
                   </div>
@@ -170,7 +198,6 @@ const SignUp = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         id="Password"
-                        name="password"
                         required
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                       />
@@ -213,6 +240,8 @@ const SignUp = () => {
 
                   <div className="col-span-6">
                     <button
+                      type="submit"
+                      onClick={onSubmit}
                       className="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                     >
                       Create an account

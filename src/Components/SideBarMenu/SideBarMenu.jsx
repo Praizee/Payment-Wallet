@@ -1,5 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from '../../Firebase/firebase.js';
+
 import {
     Card, List, ListItem, ListItemPrefix, Accordion,
     AccordionHeader, AccordionBody, Alert,
@@ -22,12 +25,26 @@ import { FaCircleUser } from "react-icons/fa6";
 
 
 export function SidebarWithSearch({ showSidebar }) {
+    const navigate = useNavigate();
+    // logout
+    const handleLogout = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            navigate("/");
+            console.log("Signed out successfully")
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+    // end of logout
+
     const [open, setOpen] = React.useState(0);
     const [openAlert, setOpenAlert] = React.useState(true);
 
     const handleOpen = (value) => {
         setOpen(open === value ? 0 : value);
     };
+
 
     return (
         // <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
@@ -216,7 +233,7 @@ export function SidebarWithSearch({ showSidebar }) {
                     </ListItem>
                 </Link>
                 <Link to="">
-                    <ListItem className="py-2">
+                    <ListItem className="py-2" onClick={handleLogout}>
                         <ListItemPrefix>
                             {/* <PowerIcon className="h-5 w-5" /> */}
                             <LuLogOut className="h-5 w-5" />

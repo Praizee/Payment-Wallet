@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../../Firebase/firebase.js';
+
 import AvailableBalance from "../../Components/Main/AvailableBalance";
 import HeaderGraph from "../../Components/Main/HeaderGraph";
 import Statistics from "../../Components/Main/Statistics";
 import { CustomerTable } from "../../Components/Main/CustomerTable";
 
 const Dashboard = () => {
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in
+        const uid = user.uid;
+        // ...
+        console.log("uid", uid)
+      } else {
+        // User is signed out
+        // ...
+        console.log("user is logged out")
+      }
+    });
+
+  }, [])
 
   return (
     <section className="text-black bg-[#F6F6F6]">
