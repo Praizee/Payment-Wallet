@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Routes } from 'react-router-dom';
 import PublicLayout from "../Layouts/PublicLayout";
 import AuthenticatedLayout from "../Layouts/AuthenticatedLayout";
+import AuthRoute from './AuthRoute'; // Import the AuthRoute component
+
 import Contact from "../Pages/Contact/Contact";
 import Login from "../Pages/Login/Login";
 import Dashboard from "../Pages/Dashboard/Dashboard";
@@ -34,20 +36,20 @@ export default function App() {
       <Route element={<AuthenticatedLayout />}>
         {/* <Route index element={<Dashboard />} /> */}
         {/* change this back to being the index element when the authentication endpoint is setup */}
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="pin-management" element={<PinManagement />} />
-        <Route path="change-password" element={<ChangePassword />} />
-        <Route path="fund-wallet" element={<FundWallet />} />
-        <Route path="topup" element={<BuyRecharge />} />
-        <Route path="electricity-payment" element={<ElectricityPayment />} />
-        <Route path="cable-subscription" element={<CableSubscription />} />
-        <Route path="transfer" element={<Transfer />} />
-        <Route path="transaction-history" element={<TransactionHistory />} />
-        <Route path="support" element={<Support />} />
-        <Route path="faqs" element={<Faqs />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="dashboard" element={<AuthRoute><Dashboard /></AuthRoute>} />
+        <Route path="profile" element={<AuthRoute><Profile /></AuthRoute>} />
+        <Route path="pin-management" element={<AuthRoute><PinManagement /></AuthRoute>} />
+        <Route path="change-password" element={<AuthRoute><ChangePassword /></AuthRoute>} />
+        <Route path="fund-wallet" element={<AuthRoute><FundWallet /></AuthRoute>} />
+        <Route path="topup" element={<AuthRoute><BuyRecharge /></AuthRoute>} />
+        <Route path="electricity-payment" element={<AuthRoute><ElectricityPayment /></AuthRoute>} />
+        <Route path="cable-subscription" element={<AuthRoute><CableSubscription /></AuthRoute>} />
+        <Route path="transfer" element={<AuthRoute><Transfer /></AuthRoute>} />
+        <Route path="transaction-history" element={<AuthRoute><TransactionHistory /></AuthRoute>} />
+        <Route path="support" element={<AuthRoute><Support /></AuthRoute>} />
+        <Route path="faqs" element={<AuthRoute><Faqs /></AuthRoute>} />
+        <Route path="settings" element={<AuthRoute><Settings /></AuthRoute>} />
+        <Route path="contact" element={<AuthRoute><Contact /></AuthRoute>} />
       </Route>
       {/* This is the catch-all route */}
       <Route path="*" element={<NotFoundPage />} />
