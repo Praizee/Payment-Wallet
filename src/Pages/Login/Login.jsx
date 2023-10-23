@@ -5,7 +5,8 @@ import { auth } from '../../Firebase/firebase.js';
 
 import { motion } from "framer-motion";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import LoginImg from "../../assets/login.jpeg"
+import LoginImg from "../../assets/login.jpeg";
+import { Spinner } from "@material-tailwind/react"; // Import the Spinner component
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -17,25 +18,30 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const onLogin = (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/dashboard")
+        navigate("/dashboard");
         console.log(user);
+        console.log("Signed in!");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
-        console.log("User details not found!")
+        console.log(errorCode, errorMessage);
+        console.log("User details not found!");
+      })
+      .finally(() => {
+        setLoading(false); // Stop loading after success or failure
       });
-
   }
-
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -190,9 +196,20 @@ const Login = () => {
                     <button
                       onClick={onLogin}
                       className="inline-block shrink-0 w-full rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                      disabled={loading} // Disable the button while loading
                     >
-                      Log in
+                      {loading ? (
+                        <>
+                          <span className="flex place-content-center gap-2">
+                            <Spinner color="blue" className="h-5 w-5 text-gray-500" />  {/* Show "Logging in..." along with the spinner when loading */}
+                            <span className="text-gray-500 text-sm py-">Logging in... </span>
+                          </span>
+                        </>
+                      ) : (
+                        'Log in' // Show "Log in" when not loading
+                      )}
                     </button>
+
 
                   </div>
 
