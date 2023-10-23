@@ -14,7 +14,8 @@ const Dashboard = () => {
         // User is signed in
         const uid = user.uid;
         // ...
-        console.log("uid", uid)
+        // console.log("uid", uid)
+        console.log("user is logged in")
       } else {
         // User is signed out
         // ...
