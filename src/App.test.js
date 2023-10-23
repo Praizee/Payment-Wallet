@@ -5,3 +5,12 @@
 // test('renders App component', () => {
 //     render(<App />); // Render your App component
 // });
+
+
+
+// import { render, screen } from "@testing-library/react";
+// import App from "./App";
+
+// test("renders learn react link", () => {
+//   expect("APP").toBe("APP");
+// });
