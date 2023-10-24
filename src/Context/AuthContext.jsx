@@ -14,11 +14,9 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Your authentication logic here (e.g., check if the user is authenticated)
-        // You can use Firebase, an API, or any other authentication method
-        // For example, you can use Firebase Authentication
+        // Authentication logic here (e.g., check if the user is authenticated)
 
-        // Sample code for Firebase Authentication (adjust to your needs)
+        // Sample code for Firebase Authentication
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setUser(user);
             setLoading(false);
