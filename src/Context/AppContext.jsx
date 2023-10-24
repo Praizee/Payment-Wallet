@@ -25,13 +25,13 @@ export const AppProvider = ({ children }) => {
                     const snapshot = await get(userRef);
                     if (snapshot.exists()) {
                         const userData = snapshot.val();
-                        const { firstName, lastName } = userData;
+                        const { first_name, last_name } = userData; // Use 'first_name' for retrieval
 
                         setUser({
                             uid,
                             email,
-                            firstName,
-                            lastName,
+                            firstName: first_name, // Map to 'firstName' in your state
+                            lastName: last_name,   // Map to 'lastName' in your state
                             // Add other user data fields here
                         });
                     } else {
@@ -50,6 +50,7 @@ export const AppProvider = ({ children }) => {
         // Clean up the subscription
         return () => unsubscribe();
     }, []);
+
 
     return (
         <AppContext.Provider value={{ user, setUser, loading }}>
