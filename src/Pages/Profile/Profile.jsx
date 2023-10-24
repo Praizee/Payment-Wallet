@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAppContext } from '../../Context/AppContext';
+
 
 const Profile = () => {
+    const { user, setUser } = useAppContext(); // Use the user state from the context
+
     return (
         <div className="container pt-20 pb-0">
 
@@ -12,27 +16,30 @@ const Profile = () => {
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent py-4'>
                     <h2 className='font-semibold'>Username</h2>
-                    <p>Praizee</p>
+                    <p>{user ? user.firstName : 'FirstName'}</p>
                 </div>
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
                     <h2 className='font-semibold'>Phone Number</h2>
-                    <p>+2349012345678</p>
+                    {/* <p>+2349012345678</p> */}
+                    <p className='italic text-red-300'>Not yet set</p>
                 </div>
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
                     <h2 className='font-semibold'>Email</h2>
-                    <p>user@mail.com</p>
+                    <p>{user ? user.email : 'user@mail.com'}</p>
                 </div>
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
                     <h2 className='font-semibold'>Bank Name</h2>
-                    <p>Zenith Bank</p>
+                    {/* <p>Zenith Bank</p> */}
+                    <p className='italic text-red-300'>Not yet set</p>
                 </div>
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
                     <h2 className='font-semibold'>Account Number</h2>
-                    <p>1234567890</p>
+                    {/* <p>1234567890</p> */}
+                    <p className='italic text-red-300'>Not yet set</p>
                 </div>
 
                 <div className='flex mt-4'>
