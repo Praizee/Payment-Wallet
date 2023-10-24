@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import { SidebarWithSearch } from '../Components/SideBarMenu/SideBarMenu';
 
 import { useAppContext } from '../Context/AppContext'; // Updated import to useAppContext
+import Footer from '../Components/Footer/Footer';
 
 const AuthenticatedLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -51,23 +52,26 @@ const AuthenticatedLayout = () => {
   };
 
   return (
-    <div className="flex h-screen">
-      {user && !loading && <Navbar toggleSidebar={toggleSidebar} />} {/* Render the Navbar only when user is authenticated and not loading */}
+    <section>
+      <div className="flex h-screen">
+        {user && !loading && <Navbar toggleSidebar={toggleSidebar} />} {/* Render the Navbar only when user is authenticated and not loading */}
 
-      <div className="flex-1 flex overflow-hidden">
-        <div className="mt-[5.5rem] h-full overflow-y-auto">
-          {user && !loading && <SidebarWithSearch showSidebar={showSidebar} />} {/* Render the Sidebar only when user is authenticated and not loading */}
+        <div className="flex-1 flex overflow-hidden">
+          <div className="mt-[5.5rem] h-full overflow-y-auto">
+            {user && !loading && <SidebarWithSearch showSidebar={showSidebar} />} {/* Render the Sidebar only when user is authenticated and not loading */}
+          </div>
+
+          <main className="flex-1 overflow-x-auto overflow-y-auto bg-[#F6F6F6] dark:bg-gray-900">
+            <div className="container mx-auto px-3 tablet:px-6 pt-8">
+              <Outlet />
+              <Footer />
+            </div>
+          </main>
         </div>
 
-        <main className="flex-1 overflow-x-auto overflow-y-auto bg-[#F6F6F6] dark:bg-gray-900">
-          <div className="container mx-auto px-3 tablet:px-6 py-8">
-            <Outlet />
-          </div>
-        </main>
+        <ScrollButton />
       </div>
-
-      <ScrollButton />
-    </div>
+    </section>
   );
 };
 
