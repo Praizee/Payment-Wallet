@@ -44,3 +44,6 @@ module.exports = withMT({
     themes: ["light", "dark", "cupcake"],
   },
 });
+
+// Made with 💙 by Stephen Adeniji
+// https://stephen-adeniji.netlify.app/
