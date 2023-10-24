@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../Firebase/firebase.js';
+import { auth, db } from '../../Firebase/firebase.js';
+import { updateProfile } from "firebase/auth";
+import { getDatabase, ref, set } from 'firebase/database';
+import { useAppContext } from "../../Context/AppContext";
 
 import { motion } from "framer-motion";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import SignUpImg from "../../assets/young-afro-man-listening-music-with-headphones_58466-16300.webp"
+import { Spinner } from "@material-tailwind/react"; // Import the Spinner component
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -14,33 +18,65 @@ const animationConfiguration = {
 };
 
 const SignUp = () => {
+  const { user, setUser } = useAppContext(); // Use the user state from the context
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false); // Add loading state
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('');
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    setUser((prevUser) => ({
+      ...prevUser,
+      [name]: value,
+    }));
+  };
+
+  const initialUserState = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  };
 
   const onSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        console.log('User Signed up successfully!');
-        navigate("/")
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        console.log("Email is already in use");
-        // ..
+    if (!user.email || !user.password) {
+      console.log("Email and password are required.");
+      return;
+    }
+
+    setLoading(true); // Start loading
+
+    try {
+      // Create the user with email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, user.email, user.password);
+
+      // Set the display name (assuming you want to set it as "First Name Last Name")
+      await updateProfile(userCredential.user, {
+        displayName: `${user.firstName} ${user.lastName}`,
       });
 
+      // Create a reference to the Firebase Realtime Database
+      const db = getDatabase();
+      const usersRef = ref(db, "users/" + userCredential.user.uid);
 
-  }
+      // Store additional user data in Firebase Realtime Database
+      set(usersRef, {
+        first_name: user.firstName,
+        last_name: user.lastName,
+        email: user.email,
+        password: user.password,
+      });
+
+      console.log("User Signed up successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error creating user:", error);
+    } finally {
+      setLoading(false); // Stop loading after success or failure
+    }
+  };
+
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -133,7 +169,8 @@ const SignUp = () => {
                 </div>
 
                 {/* border-2 border-dotted border-[#0071F2] px-8 py-2 */}
-                <form action="#" className=" mt-8 md:mt-0 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10 md:p-5">
+                <form
+                  className=" mt-8 md:mt-0 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10 md:p-5">
 
                   <div className="col-span-6 sm:col-span-3">
                     <label
@@ -146,8 +183,10 @@ const SignUp = () => {
                     <input
                       type="text"
                       id="FirstName"
-                      name="first_name"
-                      // required
+                      value={user?.firstName ?? ""}
+                      onChange={(e) => handleChange(e)}
+                      name="firstName"
+                      required
                       placeholder="First name"
                       autoFocus
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -165,8 +204,10 @@ const SignUp = () => {
                     <input
                       type="text"
                       id="LastName"
-                      name="last_name"
-                      // required
+                      value={user?.lastName ?? ""}
+                      onChange={(e) => handleChange(e)}
+                      name="lastName"
+                      required
                       placeholder="Last name"
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
@@ -181,8 +222,9 @@ const SignUp = () => {
                       type="email"
                       id="Email"
                       required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={user?.email ?? ""}
+                      onChange={(e) => handleChange(e)}
+                      name="email"
                       placeholder="Email address"
                       className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                     />
@@ -195,9 +237,10 @@ const SignUp = () => {
                     <div className="relative">
                       <input
                         type={showPassword ? 'text' : 'password'}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={user?.password ?? ""}
+                        onChange={(e) => handleChange(e)}
                         id="Password"
+                        name="password"
                         required
                         className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                       />
@@ -244,7 +287,16 @@ const SignUp = () => {
                       onClick={onSubmit}
                       className="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                     >
-                      Create an account
+                      {loading ? (
+                        <>
+                          <span className="flex place-content-center gap-2">
+                            <Spinner color="blue" className="h-5 w-5 text-gray-500" />  {/* Show "Logging in..." along with the spinner when loading */}
+                            <span className="text-gray-500 text-sm py-">Creating Account... </span>
+                          </span>
+                        </>
+                      ) : (
+                        'Create account' // Show "Log in" when not loading
+                      )}
                     </button>
 
                   </div>
