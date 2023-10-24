@@ -4,22 +4,23 @@ import ScrollButton from '../Components/ScrollToTop/ScrollToTop';
 import Navbar from '../Components/Navbar/Navbar';
 import { SidebarWithSearch } from '../Components/SideBarMenu/SideBarMenu';
 
-import { useAuth } from '../Context/AuthContext'; // Import the useAuth hook
+import { useAppContext } from '../Context/AppContext'; // Updated import to useAppContext
 
 const AuthenticatedLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
-  const { user, loading } = useAuth(); // Access user and loading from the context
+  const { user, loading } = useAppContext(); // Updated to useAppContext  // Access user and loading from the context
 
   // Handle redirect when user is not authenticated
   useEffect(() => {
     if (loading) {
-      // If still loading, show a loading indicator
+      // If still loading, show a loading indicator or a message
       return;
     }
 
     if (!user) {
       // If the user is not authenticated, redirect to the login page
+      console.log('User is not authenticated. Redirecting to login page.');
       navigate('/');
     }
   }, [loading, user, navigate]);
