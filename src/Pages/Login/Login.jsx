@@ -133,7 +133,7 @@ const Login = () => {
                   </p>
                 </div>
 
-                <form action="#" className=" mt-8 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-6 md:p-10">
+                <form className=" mt-8 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-6 md:p-10">
 
                   <div className="col-span-6 ">
                     <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
