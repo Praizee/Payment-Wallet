@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { auth } from '../../Firebase/firebase.js'; // Import Firebase authentication
 
 const animationConfiguration = {
     initial: { opacity: 0 },
@@ -9,6 +11,33 @@ const animationConfiguration = {
 };
 
 const ResetPassword = () => {
+    const [email, setEmail] = useState("");
+    const [isSent, setIsSent] = useState(false);
+
+    const handlePasswordReset = async () => {
+        try {
+            await sendPasswordResetEmail(auth, email);
+            console.log("Password reset email sent successfully.");
+            // You can add a success message or redirect the user to another page.
+        } catch (error) {
+            console.error("Error sending password reset email:", error);
+            // Handle the error, e.g., show an error message to the user.
+        }
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                setIsSent(true); // Set isSent to true after successfully sending the email.
+
+                // Automatically hide the message after 5 seconds (5000 milliseconds)
+                setTimeout(() => {
+                    setIsSent(false);
+                }, 5000);
+            })
+            .catch((error) => {
+                // Handle any errors here.
+            });
+    };
+
+
 
     return (
         <section className="text-black bg-[#F6F6F6]">
@@ -99,7 +128,13 @@ const ResetPassword = () => {
                                     </Link>
                                 </div>
 
-                                <form action="#" className=" mt-8 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10">
+                                <form
+                                    onSubmit={(e) => {
+                                        e.preventDefault();
+                                        handlePasswordReset();
+                                    }}
+                                    className=" mt-8 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10"
+                                >
 
                                     <div className="col-span-6 ">
                                         <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
@@ -113,11 +148,14 @@ const ResetPassword = () => {
                                             required
                                             autoFocus
                                             className="input mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
                                         />
                                     </div>
 
                                     <div className="col-span-6 sm:gap-4">
                                         <button
+                                            type="submit"
                                             className="inline-block shrink-0 w-full rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                                         >
                                             Continue
@@ -127,9 +165,18 @@ const ResetPassword = () => {
 
 
                                     <div className="col-span-6">
+                                        {isSent &&
+                                            <p className="text-sm sm:my-2 text-blue-500">
+                                                Password reset email sent. Check your inbox.
+                                            </p>
+                                        }
+
                                         <p className="mt- text-sm sm:mt-0">
                                             Having problems logging in? &nbsp;
-                                            <a className="text-[#0071F2] font-semibold text-sm link link-hover">Chat with us</a>.
+                                            <Link to="/" className="text-[#0071F2] font-semibold text-sm link link-hover">
+                                                Chat with us
+                                            </Link>
+                                            .
                                         </p>
                                     </div>
                                 </form>
