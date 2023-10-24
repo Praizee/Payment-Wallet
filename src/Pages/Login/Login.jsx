@@ -36,7 +36,8 @@ const Login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        console.log("User details not found!");
+        console.log("Invalid login credentials!");
+        console.log("Check your email and password and try again");
       })
       .finally(() => {
         setLoading(false); // Stop loading after success or failure
