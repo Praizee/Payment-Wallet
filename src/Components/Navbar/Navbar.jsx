@@ -3,8 +3,10 @@ import { FiMenu } from "react-icons/fi";
 import { LuBell, LuScanLine, LuSun, LuMoon } from "react-icons/lu";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import UserPic from "../../assets/Userpic.png";
+import { useAppContext } from "../../Context/AppContext";
 
 const Navbar = ({ toggleSidebar }) => {
+  const { user, setUser } = useAppContext(); // Use the user state from the context
 
   return (
     <div className="navbar bg-white border-2 border-t-transparent fixed py-4 top-0 z-[100]">
@@ -47,9 +49,9 @@ const Navbar = ({ toggleSidebar }) => {
             </span>
             <span>
               <h2 className="text-[#2E2E3A] text-[0.875rem] font-semibold">
-                Steve Ade
+                {user.firstName} {user.lastName}
               </h2>
-              <p className="text-[#9A9AAF] text-[0.75rem] font-light">Admin</p>
+              <p className="text-[#9A9AAF] text-[0.75rem] font-light">User</p>
             </span>
           </span>
         </div>
