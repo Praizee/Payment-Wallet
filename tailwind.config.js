@@ -24,6 +24,12 @@ module.exports = withMT({
       'desktop': '1280px',
       // => @media (min-width: 1280px) { ... }
     },
+    fontFamily: {
+      'sans': ['ui-sans-serif', 'system-ui',],
+      'serif': ['ui-serif', 'Georgia',],
+      'mono': ['ui-monospace', 'monospace', 'Space Mono', 'SFMono-Regular',],
+    },
+
     fontWeight: {
       thin: '100',
       extralight: '200',
