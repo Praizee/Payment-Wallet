@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import LoginImg from "../../assets/login.jpeg";
 import { Spinner } from "@material-tailwind/react"; // Import the Spinner component
+import Alerts from "../../Components/Alerts/Alerts.jsx";
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -19,10 +20,22 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false); // Add loading state
+  const [errorMessages, setErrorMessages] = useState([]);
+
+
 
   const onLogin = (e) => {
     e.preventDefault();
+    setErrorMessages([]); // Clear any previous error messages
     setLoading(true); // Start loading
+
+    if (!email || !password) {
+      setErrorMessages(['Email and password are required.']);
+      setLoading(false);
+      return;
+    }
+
+    let errorMessage = ''; // Use let instead of const
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -34,15 +47,23 @@ const Login = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
+        errorMessage = error.message; // Reassign errorMessage with let
+
+        // delete this to continue using FirebaseError
+        if (errorCode === "auth/invalid-login-credentials") {
+          errorMessage = "Invalid login credentials. Check your email and password and try again.";
+        }
+
         console.log(errorCode, errorMessage);
-        console.log("Invalid login credentials!");
-        console.log("Check your email and password and try again");
       })
       .finally(() => {
+        // Set the error message to display to the user
+        setErrorMessages([errorMessage]);
         setLoading(false); // Stop loading after success or failure
       });
-  }
+  };
+
+
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -61,6 +82,7 @@ const Login = () => {
       >
 
         <section className="bg-white">
+
           <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
             <section
               className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
@@ -74,7 +96,7 @@ const Login = () => {
               />
 
               <div className="hidden lg:relative rounded-lg p-2 lg:block lg:p-12">
-                <a className="block w-min text-gray-100" href="/">
+                <a className="block sr-only w-min text-gray-100" href="/">
                   <span className="sr-only">Home</span>
                   <svg
                     className="h-8 sm:h-10"
@@ -202,14 +224,15 @@ const Login = () => {
                       {loading ? (
                         <>
                           <span className="flex place-content-center gap-2">
-                            <Spinner color="blue" className="h-5 w-5 text-gray-500" />  {/* Show "Logging in..." along with the spinner when loading */}
+                            <Spinner color="blue" className="h-5 w-5 text-gray-500" />
                             <span className="text-gray-500 text-sm py-">Logging in... </span>
                           </span>
                         </>
                       ) : (
-                        'Log in' // Show "Log in" when not loading
+                        'Log in'
                       )}
                     </button>
+
 
 
                   </div>
@@ -230,6 +253,8 @@ const Login = () => {
                       <a className="text-[#0071F2] text-sm font-semibold link link-hover">Chat with us</a>.
                     </p>
                   </div>
+                  {/* error alert message */}
+                  <Alerts errorMessages={errorMessages} />
                 </form>
               </div>
             </main>

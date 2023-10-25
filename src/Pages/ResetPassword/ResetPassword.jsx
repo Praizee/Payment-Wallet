@@ -60,7 +60,7 @@ const ResetPassword = () => {
                             </div>
 
                             <div className="hidden lg:relative rounded-lg p-2 lg:block lg:p-12">
-                                <a className="block w-min text-gray-100" href="/">
+                                <a className="block sr-only w-min text-gray-100" href="/">
                                     <span className="sr-only">Home</span>
                                     <svg
                                         className="h-8 sm:h-10"
