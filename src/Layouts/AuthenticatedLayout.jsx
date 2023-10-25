@@ -20,12 +20,13 @@ const AuthenticatedLayout = () => {
       return;
     }
 
-    if (!user) {
-      // If the user is not authenticated, redirect to the login page
-      console.log('User is not authenticated. Redirecting to login page.');
-      alert('User is not authenticated. Redirecting to login page.')
-      navigate('/');
-    }
+    //  kinda useless...makes the user unable to login at first, unless they try again
+    // if (!user) {
+    //   // If the user is not authenticated, redirect to the login page
+    //   console.log('User is not authenticated. Redirecting to login page.');
+    //   alert('User is not authenticated. Redirecting to login page.')
+    //   navigate('/');
+    // }
   }, [loading, user, navigate]);
 
   // Function to handle window resize
