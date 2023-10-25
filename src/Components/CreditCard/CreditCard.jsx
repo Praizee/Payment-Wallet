@@ -1,8 +1,12 @@
 import React from 'react'
 import './styles.css'
 import { BsBank } from "react-icons/bs";
+import { useAppContext } from '../../Context/AppContext'; // Updated import to useAppContext
 
 const CreditCard = () => {
+    const { user } = useAppContext(); // Use the user state from the context
+    // console.log('User:', user); // log the user data
+
     return (
         <section>
             <div className="">
@@ -42,13 +46,14 @@ const CreditCard = () => {
                                     VALID <br /> TILL
                                 </p>
                                 <p className='uppercase font-mono'>
-                                    10 / 25
+                                    10 / 27
                                 </p>
                             </div>
 
                             <div className="flex content-center justify-between name text-[22px] mt-12">
                                 <p className='uppercase font-mono'>
-                                    CARD-HOLDER JOE ALISON
+                                    CARD-HOLDER: <b>{user?.firstName} {user?.lastName}</b>
+                                    {/* {user && user.firstName ? user.firstName : 'User'} */}
                                 </p>
                                 <img src="https://i.ibb.co/WHZ3nRJ/visa.png" className='w-[80px]' />
                             </div>
@@ -77,7 +82,7 @@ const CreditCard = () => {
                             </div>
                             <div className="flex content-center justify-between signature mt-[30px]">
                                 <p className='uppercase font-mono'>
-                                    CUSTOMER SIGNATURE
+                                    CUSTOMER SIGNATURE: <i>{user?.firstName} {user?.lastName}</i>
                                 </p>
                                 <img src="https://i.ibb.co/WHZ3nRJ/visa.png" className='w-[80px]' />
                             </div>
