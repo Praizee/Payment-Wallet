@@ -74,17 +74,17 @@ const CreditCard = () => {
                                 </p>
                             </div>
                             <div className="flex content-center justify-between mt-[30px] text-[14px]">
-                                <p className='font-mono text-sm leading-none'>
+                                <p className='font-mono text-sm leading-[0.9]'>
                                     Please remember to keep your credit card information
                                     secure and never share it with anyone unless you are
                                     making a secure transaction with a trusted entity.
                                 </p>
                             </div>
-                            <div className="flex content-center justify-between signature mt-[30px]">
-                                <p className='uppercas font-mono'>
-                                    CUSTOMER SIGNATURE: <i className='font-cursive'>{user?.firstName} {user?.lastName}</i>
+                            <div className="flex content-center justify-between signature mt-8">
+                                <p className='font-mono'>
+                                    CUSTOMER SIGNATURE: <i className='font-cursive text-[1.5rem]'>{user?.firstName} {user?.lastName}</i>
                                 </p>
-                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" className='w-[80px]' />
+                                {/* <img src="https://i.ibb.co/WHZ3nRJ/visa.png" className='w-[80px]' /> */}
                             </div>
                         </div>
                     </div>
