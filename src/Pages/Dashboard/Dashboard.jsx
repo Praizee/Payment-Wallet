@@ -80,12 +80,18 @@ const Dashboard = () => {
                 Overview
               </h1>
 
-              <div className="laptop:flex gap-4 justify-between">
-                {/* <HeaderGraph /> */}
+              <div className="laptop:flex gap-20 justify-betwee">
                 <AvailableBalance />
+                <div className='hidden laptop:block'>
+                  <CreditCard />
+                </div>
               </div>
 
-              <div className="">
+              <div className=''>
+                {/* <HeaderGraph /> */}
+              </div>
+
+              <div className="laptop:hidden">
                 <CreditCard />
               </div>
 
