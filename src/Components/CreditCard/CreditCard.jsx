@@ -81,8 +81,8 @@ const CreditCard = () => {
                                 </p>
                             </div>
                             <div className="flex content-center justify-between signature mt-[30px]">
-                                <p className='uppercase font-mono'>
-                                    CUSTOMER SIGNATURE: <i>{user?.firstName} {user?.lastName}</i>
+                                <p className='uppercas font-mono'>
+                                    CUSTOMER SIGNATURE: <i className='font-cursive'>{user?.firstName} {user?.lastName}</i>
                                 </p>
                                 <img src="https://i.ibb.co/WHZ3nRJ/visa.png" className='w-[80px]' />
                             </div>

@@ -28,6 +28,8 @@ module.exports = withMT({
       'sans': ['ui-sans-serif', 'system-ui',],
       'serif': ['ui-serif', 'Georgia',],
       'mono': ['ui-monospace', 'monospace', 'Space Mono', 'SFMono-Regular',],
+      'cursive': ['Dancing Script', 'cursive',],
+      // 'Bad Script', 
     },
 
     fontWeight: {
