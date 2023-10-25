@@ -82,7 +82,7 @@ const Dashboard = () => {
 
               <div className="laptop:flex gap-20 justify-betwee">
                 <AvailableBalance />
-                <div className='hidden laptop:block'>
+                <div className="hidden laptop:block">
                   <CreditCard />
                 </div>
               </div>
@@ -91,7 +91,7 @@ const Dashboard = () => {
                 {/* <HeaderGraph /> */}
               </div>
 
-              <div className="laptop:hidden">
+              <div className="laptop:hidden overflow-x-auto max-w-[20.5rem] min-w-[19.5rem] tablet:max-w-[35.5rem]">
                 <CreditCard />
               </div>
 
