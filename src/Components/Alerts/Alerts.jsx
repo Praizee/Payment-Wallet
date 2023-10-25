@@ -17,7 +17,7 @@ const Alerts = ({ errorMessages }) => {
             // Automatically clear the alerts after 5 seconds
             setTimeout(() => {
                 setAlerts([]);
-            }, 5000);
+            }, 3000);
         }
     }, [errorMessages]);
 
