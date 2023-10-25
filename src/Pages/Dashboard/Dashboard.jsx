@@ -10,6 +10,7 @@ import { CustomerTable } from "../../Components/Main/CustomerTable";
 
 import { useAppContext } from '../../Context/AppContext'; // Updated import to useAppContext
 import GreetingMessage from '../../Components/Greeting/GreetingMessage.jsx';
+import CreditCard from '../../Components/CreditCard/CreditCard.jsx';
 
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -82,6 +83,10 @@ const Dashboard = () => {
               <div className="laptop:flex gap-4 justify-between">
                 {/* <HeaderGraph /> */}
                 <AvailableBalance />
+              </div>
+
+              <div className="">
+                <CreditCard />
               </div>
 
               <div className="">
