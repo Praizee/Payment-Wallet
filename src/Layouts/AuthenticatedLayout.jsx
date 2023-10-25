@@ -6,6 +6,7 @@ import { SidebarWithSearch } from '../Components/SideBarMenu/SideBarMenu';
 
 import { useAppContext } from '../Context/AppContext'; // Updated import to useAppContext
 import Footer from '../Components/Footer/Footer';
+import { Alert } from 'antd';
 
 const AuthenticatedLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -22,6 +23,7 @@ const AuthenticatedLayout = () => {
     if (!user) {
       // If the user is not authenticated, redirect to the login page
       console.log('User is not authenticated. Redirecting to login page.');
+      alert('User is not authenticated. Redirecting to login page.')
       navigate('/');
     }
   }, [loading, user, navigate]);
@@ -64,7 +66,7 @@ const AuthenticatedLayout = () => {
           <main className="flex-1 overflow-x-auto overflow-y-auto bg-[#F6F6F6] dark:bg-gray-900">
             <div className="container mx-auto px-3 tablet:px-6 pt-8">
               <Outlet />
-              <Footer />
+              {user && !loading && <Footer />}
             </div>
           </main>
         </div>
