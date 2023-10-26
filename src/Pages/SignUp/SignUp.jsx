@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
 import { auth, db } from '../../Firebase/firebase.js';
-import { updateProfile } from "firebase/auth";
 import { getDatabase, ref, set } from 'firebase/database';
 import { useAppContext } from "../../Context/AppContext";
 
@@ -23,6 +22,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false); // Add loading state
   const [errorMessages, setErrorMessages] = useState([]);
+  const [successMessages, setSuccessMessages] = useState([]); // Define successMessages state
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -42,6 +42,7 @@ const SignUp = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setErrorMessages([]);
+    setSuccessMessages([]); // Clear any existing success messages
 
     // Extract user input
     const { email, password, firstName, lastName } = user;
@@ -49,7 +50,6 @@ const SignUp = () => {
     // Check if any field is empty
     if (!email || !password || !firstName || !lastName) {
       setErrorMessages(["Please fill in all fields."]);
-      console.log("Please fill in all fields.");
       return;
     }
 
@@ -57,7 +57,6 @@ const SignUp = () => {
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if (!emailRegex.test(email)) {
       setErrorMessages(["Invalid email. Email should contain an '@'."]);
-      console.log("Invalid email. Email should contain an '@'.");
       return;
     }
 
@@ -67,7 +66,6 @@ const SignUp = () => {
       setErrorMessages([
         "Password should be at least 6 characters and contain at least one uppercase letter, one lowercase letter, and one number.",
       ]);
-      console.log("Password should be at least 6 characters and contain at least one uppercase letter, one lowercase letter, and one number.")
       return;
     }
 
@@ -79,6 +77,9 @@ const SignUp = () => {
         displayName: `${firstName} ${lastName}`,
       });
 
+      // Send email verification
+      await sendEmailVerification(userCredential.user);
+
       const db = getDatabase();
       const usersRef = ref(db, "users/" + userCredential.user.uid);
 
@@ -89,8 +90,15 @@ const SignUp = () => {
         password: password,
       });
 
-      console.log("User signed up successfully!");
-      navigate("/");
+      // Add the success message here
+      console.log("Account created successfully! Please check your email to verify your account.");
+      setSuccessMessages(["Account created successfully! Please check your email to verify your account."]);
+
+      // Automatically clear the success message and navigate after 5 seconds
+      setTimeout(() => {
+        setSuccessMessages([]);
+        navigate("/");
+      }, 5000);
     } catch (error) {
       console.error("Error creating user:", error);
       setErrorMessages([error.message]);
@@ -98,7 +106,6 @@ const SignUp = () => {
       setLoading(false);
     }
   };
-
 
 
   const [showPassword, setShowPassword] = useState(false);
@@ -327,8 +334,9 @@ const SignUp = () => {
                       <a className="text-[#0071F2] text-sm font-semibold link link-hover">Chat with us</a>.
                     </p>
                   </div>
-                  {/* Display the Alerts component with error messages */}
-                  <Alerts errorMessages={errorMessages} />
+                  {/* Display the Alerts component with error and success messages */}
+                  <Alerts errorMessages={errorMessages} successMessages={successMessages} />
+                  {/* Pass successMessages to Alerts component */}
                 </form>
               </div>
 
