@@ -27,12 +27,12 @@ const Alerts = ({ errorMessages, successMessages }) => {
             // Automatically clear the alerts after 5 seconds
             setTimeout(() => {
                 setAlerts([]);
-            }, 5000);
+            }, 3500);
         }
     }, [errorMessages, successMessages]);
 
     return (
-        <div className="fixed top-0 right-0 p-4">
+        <div className="fixed top-0 right-0 p-4 transition ease-linear animate-bounce duration-500">
             {alerts}
         </div>
     );
