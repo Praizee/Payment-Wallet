@@ -8,6 +8,7 @@ const Alerts = ({ errorMessages, successMessages }) => {
         const errorMessagesArray = Array.isArray(errorMessages) ? errorMessages : [];
         const successMessagesArray = Array.isArray(successMessages) ? successMessages : [];
 
+        // Combine error and success messages into a single array
         const combinedMessages = [...errorMessagesArray, ...successMessagesArray];
 
         if (combinedMessages.length > 0) {
@@ -24,7 +25,7 @@ const Alerts = ({ errorMessages, successMessages }) => {
 
             setAlerts(newAlerts);
 
-            // Automatically clear the alerts after 5 seconds
+            // Automatically clear the alerts after 3.5 seconds (3500 milliseconds)
             setTimeout(() => {
                 setAlerts([]);
             }, 3500);
