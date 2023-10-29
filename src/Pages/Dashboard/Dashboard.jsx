@@ -12,6 +12,7 @@ import { useAppContext } from '../../Context/AppContext'; // Updated import to u
 import GreetingMessage from '../../Components/Greeting/GreetingMessage.jsx';
 import CreditCard from '../../Components/CreditCard/CreditCard.jsx';
 
+// Define animation configuration
 const animationConfiguration = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -20,25 +21,22 @@ const animationConfiguration = {
 
 const Dashboard = () => {
   const { user } = useAppContext(); // Use the user state from the context
-  console.log('User:', user); // log the user data
+  console.log('User:', user); // Log the user data
 
-
+  // useEffect to monitor user authentication state
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
         const uid = user.uid;
-        // ...
         // console.log("uid", uid)
-        console.log("user is logged in")
+        console.log("user is logged in");
       } else {
         // User is signed out
-        // ...
-        console.log("user is logged out")
+        console.log("user is logged out");
       }
     });
-
-  }, [])
+  }, []);
 
   return (
     <motion.div
@@ -60,21 +58,6 @@ const Dashboard = () => {
                   {user && user.firstName ? user.firstName : 'User'}
                 </span>
               </h1>
-
-
-              {/* Check if user is null */}
-
-              {/* when the firstName is undefined */}
-              {/* <h1 className="text-[1.2rem] text-[#2E2E3A] leading-tight font-bold">
-                Good day, &nbsp;
-                {user.firstName ? (
-                  <span className="text-blue-500 text-[1.2rem]">
-                    {user.firstName}
-                  </span>
-                ) : (
-                  "User"
-                )}
-              </h1> */}
 
               <h1 className="text-[2rem] text-[#2E2E3A] leading-normal font-bold">
                 Overview
@@ -106,7 +89,6 @@ const Dashboard = () => {
 
           </div>
         </div>
-
       </section>
     </motion.div>
   );
