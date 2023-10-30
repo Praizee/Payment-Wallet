@@ -30,9 +30,10 @@ const Navbar = ({ toggleSidebar }) => {
           <button className="btn btn-ghost btn-circle hidden tablet:inline-flex" title="Scan QR Code">
             <LuScanLine size={23} /> {/* Scan QR Code icon */}
           </button>
-          <button className="btn btn-ghost btn-circle hidden tablet:inline-flex" title="Get Help">
+          <a href="mailto:name@email.com"
+            className="btn btn-ghost btn-circle hidden tablet:inline-flex" title="Get Help">
             <IoChatboxEllipsesOutline size={23} /> {/* Get Help icon */}
-          </button>
+          </a>
           <button className="btn btn-ghost btn-circle" title="Notifications">
             <div className="indicator">
               <LuBell size={23} /> {/* Bell icon */}
