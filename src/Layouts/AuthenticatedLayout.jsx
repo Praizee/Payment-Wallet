@@ -60,7 +60,7 @@ const AuthenticatedLayout = () => {
         {user && !loading && <Navbar toggleSidebar={toggleSidebar} />} {/* Render the Navbar only when user is authenticated and not loading */}
 
         <div className="flex-1 flex overflow-hidden">
-          <div className="mt-[5.5rem] h-full overflow-y-auto">
+          <div className="mt-[5.5rem] h-auto overflow-y-auto">
             {user && !loading && <SidebarWithSearch showSidebar={showSidebar} />} {/* Render the Sidebar only when user is authenticated and not loading */}
           </div>
 
