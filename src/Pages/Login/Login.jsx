@@ -225,7 +225,7 @@ const Login = () => {
                         <>
                           <span className="flex place-content-center gap-2">
                             <Spinner color="blue" className="h-5 w-5 text-gray-500" />
-                            <span className="text-gray-500 text-sm py-">Logging in... </span>
+                            <span className="text-gray-800 text-sm">Logging in... </span>
                           </span>
                         </>
                       ) : (

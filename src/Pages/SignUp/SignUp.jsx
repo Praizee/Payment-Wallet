@@ -316,7 +316,7 @@ const SignUp = () => {
                         <>
                           <span className="flex place-content-center gap-2">
                             <Spinner color="blue" className="h-5 w-5 text-gray-500" />  {/* Show "Logging in..." along with the spinner when loading */}
-                            <span className="text-gray-500 text-sm py-">Creating Account... </span>
+                            <span className="text-gray-800 text-sm">Creating Account... </span>
                           </span>
                         </>
                       ) : (
