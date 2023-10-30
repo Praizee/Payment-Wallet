@@ -232,9 +232,6 @@ const Login = () => {
                         'Log in'
                       )}
                     </button>
-
-
-
                   </div>
 
                   <div className="col-span-6 sm:gap-4">
