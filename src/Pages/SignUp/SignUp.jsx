@@ -146,8 +146,11 @@ const SignUp = () => {
                 </h2>
 
                 <p className="mt-4 leading-relaxed text-gray-200">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
-                  dolorum aliquam, quibusdam aperiam voluptatum.
+                  Discover a world of convenience with our digital wallet app.
+                  Easily manage your finances and enjoy a wide range of services,
+                  including cable subscription, electricity bill payments, mobile
+                  airtime and data purchases, and hassle-free cash transfers.
+                  Start exploring the possibilities today!
                 </p>
               </div>
             </section>
@@ -182,8 +185,11 @@ const SignUp = () => {
                   </h1>
 
                   <p className="mt-4 leading-relaxed text-gray-500">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-                    nam dolorum aliquam, quibusdam aperiam voluptatum.
+                    Discover a world of convenience with our digital wallet app.
+                    Easily manage your finances and enjoy a wide range of services,
+                    including cable subscription, electricity bill payments, mobile
+                    airtime and data purchases, and hassle-free cash transfers.
+                    Start exploring the possibilities today!
                   </p>
                 </div>
 
