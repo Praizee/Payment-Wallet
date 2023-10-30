@@ -61,11 +61,11 @@ const CreditCard = () => {
 
                         {/* card back */}
                         <div className="back w-full h-full absolute top-0 left-0 rounded-[15px] py-[20px] px-[30px] overflow-hidden z-[1]">
-                            <img src="https://i.ibb.co/PYss3yv/map.png" className="-z-[1] top-0 left-0 absolute w-full opacity-[0.3]" />
+                            <img src="https://i.ibb.co/PYss3yv/map.png" alt='world-map' className="-z-[1] top-0 left-0 absolute w-full opacity-[0.3]" />
                             <div className="bg-[#222] mx-[-30px] h-[60px] mt-[10px]"></div>
                             <div className="flex content-center justify-between card-cvv flex-1 mt-[20px]">
                                 <div>
-                                    <img src="https://i.ibb.co/S6JG8px/pattern.png"
+                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" alt='pattern'
                                         className='rounded-none block leading-[0]'
                                     />
                                 </div>
