@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiMenu } from "react-icons/fi";
 import { LuBell, LuScanLine, LuSun, LuMoon } from "react-icons/lu";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
@@ -7,7 +7,7 @@ import { useAppContext } from "../../Context/AppContext";
 import { GoVerified } from "react-icons/go";
 
 const Navbar = ({ toggleSidebar }) => {
-  const { user, setUser } = useAppContext(); // Use the user state from the context
+  const { user } = useAppContext(); // Use the user state from the context
 
   return (
     <div className="navbar bg-white border-2 border-t-transparent fixed py-4 top-0 z-[100]">
@@ -20,7 +20,7 @@ const Navbar = ({ toggleSidebar }) => {
         </div>
         <div className="flex-1 mx-4 w-1/2">
           <a className="leading-[1.5rem] text-black font-black text-[1.5rem]">
-            Logo {/* Your logo */}
+            Logo {/* Company logo */}
           </a>
         </div>
       </div>
@@ -44,6 +44,10 @@ const Navbar = ({ toggleSidebar }) => {
           </button>
           <button className="btn btn-ghost btn-circle" title="Get Help">
             <LuMoon size={23} /> {/* Moon icon */}
+          </button>
+          {/* remove 'hidden' when dark/light mode functionality is implemented */}
+          <button className="btn hidden btn-ghost btn-circle" title="Get Help">
+            <LuSun size={23} /> {/* Sun icon */}
           </button>
         </div>
         <div className="">
