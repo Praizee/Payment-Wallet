@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <section className=''>
             <div className='text-sm'>
-                <p className='text-black text-center tablet:mx-3 bg-white py-4'>
+                <p className='text-black border border-gray-300 mt-4 text-center tablet:mx-3 bg-white py-4'>
                     Made with 💙 by &nbsp;
                     <a href='https://stephen-adeniji.netlify.app/'
                         title='Stephen Adeniji'
