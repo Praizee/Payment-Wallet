@@ -32,7 +32,7 @@ export const AppProvider = ({ children }) => {
                     const snapshot = await get(userRef);
                     if (snapshot.exists()) {
                         const userData = snapshot.val();
-                        const { first_name, last_name } = userData; // Use 'first_name' for retrieval
+                        const { first_name, last_name, bankName, accountName, accountNumber, phoneNumber } = userData;
 
                         // Update the user state with the retrieved data
                         setUser({
@@ -40,6 +40,10 @@ export const AppProvider = ({ children }) => {
                             email,
                             firstName: first_name, // Map to 'firstName' in your state
                             lastName: last_name,   // Map to 'lastName' in your state
+                            bankName: bankName,
+                            accountName: accountName,
+                            accountNumber: accountNumber,
+                            phoneNumber: phoneNumber,
                             // Add other user data fields here
                         });
                     } else {

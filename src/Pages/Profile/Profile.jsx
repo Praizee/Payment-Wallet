@@ -32,8 +32,13 @@ const Profile = () => {
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
                     <h2 className='font-semibold'>Bank Name</h2>
-                    {/* <p>Zenith Bank</p> */}
-                    <p className='italic text-red-300'>Not yet set</p>
+                    <p>
+                        {user && user.accountName ? (
+                            user.accountName
+                        ) : (
+                            <span className="text-red-300">Not yet set</span>
+                        )}
+                    </p>
                 </div>
 
                 <div className='flex px-4 tablet:px-10 justify-between border-2 border-slate-300 border-x-transparent border-t-transparent py-4'>
