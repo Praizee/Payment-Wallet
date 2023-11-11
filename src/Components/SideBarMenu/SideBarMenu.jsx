@@ -49,7 +49,7 @@ export function SidebarWithSearch({ showSidebar }) {
     return (
         // <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
         <Card
-            className={`h-full ${showSidebar ? "block" : "hidden"
+            className={`${showSidebar ? "block" : "hidden"
                 } rounded-none border-none w-full max-w-[18rem] left-0 bg-transparent px-1 pt-[rem]`}
         >
 
