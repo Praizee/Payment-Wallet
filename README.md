@@ -2,6 +2,6 @@
 
 Digital Payment Wallet (Javascript)
 <img src="https://www.vesta.io/hubfs/digital-wallet-protection.png" alt="Digital Wallet"/>
-Image source = <a href="https://www.vesta.io/hubfs/digital-wallet-protection.png" target="_blank"> Vesta.io </a>
+Image source = <a href="https://www.vesta.io/hubfs/digital-wallet-protection.png" title="Image source" target="_blank"> Vesta.io </a>
 
 <!-- Made with 💙 by Stephen Adeniji -->
