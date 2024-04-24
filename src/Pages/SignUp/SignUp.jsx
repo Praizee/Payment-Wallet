@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
-import { auth, db } from '../../Firebase/firebase.js';
-import { getDatabase, ref, set } from 'firebase/database';
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  sendEmailVerification,
+} from "firebase/auth";
+import { auth, db } from "../../Firebase/firebase.js";
+import { getDatabase, ref, set } from "firebase/database";
 import { useAppContext } from "../../Context/AppContext";
 
 import { motion } from "framer-motion";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import SignUpImg from "../../assets/young-afro-man-listening-music-with-headphones_58466-16300.webp"
+import SignUpImg from "../../assets/young-afro-man-listening-music-with-headphones_58466-16300.webp";
 import { Spinner } from "@material-tailwind/react"; // Import the Spinner component
 import Alerts from "../../Components/Alerts/Alerts.jsx";
 
@@ -72,7 +76,11 @@ const SignUp = () => {
     setLoading(true);
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       await updateProfile(userCredential.user, {
         displayName: `${firstName} ${lastName}`,
       });
@@ -91,8 +99,12 @@ const SignUp = () => {
       });
 
       // Add the success message here
-      console.log("Account created successfully! Please check your email to verify your account.");
-      setSuccessMessages(["Account created successfully! Please check your email to verify your account."]);
+      console.log(
+        "Account created successfully! Please check your email to verify your account."
+      );
+      setSuccessMessages([
+        "Account created successfully! Please check your email to verify your account.",
+      ]);
 
       // Automatically clear the success message and navigate after 5 seconds
       setTimeout(() => {
@@ -106,7 +118,6 @@ const SignUp = () => {
       setLoading(false);
     }
   };
-
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -123,12 +134,9 @@ const SignUp = () => {
         exit="exit"
         transition={{ duration: 0.8 }}
       >
-
         <section className="bg-white">
           <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-            <section
-              className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
-            >
+            <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
               <img
                 alt="Young woman with afro"
                 // src="https://img.freepik.com/free-photo/young-afro-man-listening-music-with-headphones_58466-16300.jpg?w=826&t=st=1697019303~exp=1697019903~hmac=0aeb08042032beb895d26e4479fbbd396f88a62c89d2e4a5212a8da42a6ab798"
@@ -147,17 +155,15 @@ const SignUp = () => {
 
                 <p className="mt-4 leading-relaxed text-gray-200">
                   Discover a world of convenience with our digital wallet app.
-                  Easily manage your finances and enjoy a wide range of services,
-                  including cable subscription, electricity bill payments, mobile
-                  airtime and data purchases, and hassle-free cash transfers.
-                  Start exploring the possibilities today!
+                  Easily manage your finances and enjoy a wide range of
+                  services, including cable subscription, electricity bill
+                  payments, mobile airtime and data purchases, and hassle-free
+                  cash transfers. Start exploring the possibilities today!
                 </p>
               </div>
             </section>
 
-            <main
-              className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
-            >
+            <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
               <div className="max-w-xl lg:max-w-3xl">
                 <div className="relative -mt-16 block lg:hidden">
                   <a
@@ -178,25 +184,21 @@ const SignUp = () => {
                     </svg>
                   </a>
 
-                  <h1
-                    className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
-                  >
+                  <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
                     Get Started
                   </h1>
 
                   <p className="mt-4 leading-relaxed text-gray-500">
                     Discover a world of convenience with our digital wallet app.
-                    Easily manage your finances and enjoy a wide range of services,
-                    including cable subscription, electricity bill payments, mobile
-                    airtime and data purchases, and hassle-free cash transfers.
-                    Start exploring the possibilities today!
+                    Easily manage your finances and enjoy a wide range of
+                    services, including cable subscription, electricity bill
+                    payments, mobile airtime and data purchases, and hassle-free
+                    cash transfers. Start exploring the possibilities today!
                   </p>
                 </div>
 
                 {/* border-2 border-dotted border-[#0071F2] px-8 py-2 */}
-                <form
-                  className=" mt-8 md:mt-0 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10 md:p-5">
-
+                <form className=" mt-8 md:mt-0 rounded-lg grid grid-cols-6 gap-6 border-2 border-dotted border-[#0071F2] p-10 md:p-5">
                   <div className="col-span-6 sm:col-span-3">
                     <label
                       htmlFor="FirstName"
@@ -239,7 +241,10 @@ const SignUp = () => {
                   </div>
 
                   <div className="col-span-6">
-                    <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="Email"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Email
                     </label>
 
@@ -256,12 +261,15 @@ const SignUp = () => {
                   </div>
 
                   <div className="col-span-6">
-                    <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="Password"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Password
                     </label>
                     <div className="relative">
                       <input
-                        type={showPassword ? 'text' : 'password'}
+                        type={showPassword ? "text" : "password"}
                         value={user?.password ?? ""}
                         onChange={(e) => handleChange(e)}
                         id="Password"
@@ -274,7 +282,11 @@ const SignUp = () => {
                         className="absolute inset-y-0 right-0 grid w-10 place-content-center text-gray-600 hover:text-gray-700"
                         onClick={togglePasswordVisibility}
                       >
-                        {showPassword ? <AiOutlineEyeInvisible size={23} title="Hide" /> : <AiOutlineEye size={23} title="Show" />}
+                        {showPassword ? (
+                          <AiOutlineEyeInvisible size={23} title="Hide" />
+                        ) : (
+                          <AiOutlineEye size={23} title="Show" />
+                        )}
                       </button>
                     </div>
                   </div>
@@ -289,8 +301,8 @@ const SignUp = () => {
                       />
 
                       <span className="text-[0.725rem] text-gray-700">
-                        I want to receive emails about events, product updates and
-                        company announcements.
+                        I want to receive emails about events, product updates
+                        and company announcements.
                       </span>
                     </label>
                   </div>
@@ -302,7 +314,10 @@ const SignUp = () => {
                         terms and conditions
                       </a>
                       &nbsp; and &nbsp;
-                      <a className="text-[#0071F2] text-[0.725rem] link link-hover">privacy policy</a>.
+                      <a className="text-[#0071F2] text-[0.725rem] link link-hover">
+                        privacy policy
+                      </a>
+                      .
                     </p>
                   </div>
 
@@ -315,41 +330,53 @@ const SignUp = () => {
                       {loading ? (
                         <>
                           <span className="flex place-content-center gap-2">
-                            <Spinner color="blue" className="h-5 w-5 text-gray-500" />  {/* Show "Logging in..." along with the spinner when loading */}
-                            <span className="text-gray-800 text-sm">Creating Account... </span>
+                            <Spinner
+                              color="blue"
+                              className="h-5 w-5 text-gray-500"
+                            />{" "}
+                            {/* Show "creating account..." along with the spinner when loading */}
+                            <span className="text-gray-800 text-sm">
+                              Creating Account...{" "}
+                            </span>
                           </span>
                         </>
                       ) : (
-                        'Create account' // Show "Log in" when not loading
+                        "Create account" // Show "create account" when not loading
                       )}
                     </button>
-
                   </div>
 
                   <p className="-mt-4 col-span-6 text-sm text-gray-500">
                     Already have an account? &nbsp;
-                    <Link to="/"
-                      className="text-[#0071F2] font-semibold text-sm link link-hover">
+                    <Link
+                      to="/"
+                      className="text-[#0071F2] font-semibold text-sm link link-hover"
+                    >
                       Log in
-                    </Link>.
+                    </Link>
+                    .
                   </p>
 
                   <div className="col-span-6 sm:flex sm:items-center mx-auto sm:gap-4">
                     <p className="mt-4 text-sm sm:mt-0">
                       Have any questions? &nbsp;
-                      <a className="text-[#0071F2] text-sm font-semibold link link-hover">Chat with us</a>.
+                      <a className="text-[#0071F2] text-sm font-semibold link link-hover">
+                        Chat with us
+                      </a>
+                      .
                     </p>
                   </div>
                   {/* Display the Alerts component with error and success messages */}
-                  <Alerts errorMessages={errorMessages} successMessages={successMessages} />
+                  <Alerts
+                    errorMessages={errorMessages}
+                    successMessages={successMessages}
+                  />
                   {/* Pass successMessages to Alerts component */}
                 </form>
               </div>
-
             </main>
           </div>
         </section>
-
       </motion.div>
     </section>
   );
